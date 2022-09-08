@@ -1,0 +1,15 @@
+$colors: (
+  'accent':#FF6B08,
+  'hover': #FF001B,
+
+  'primary-text':#000000,
+  'extra-text': #FFFFFF,
+
+  'footer': #F7F7F7,
+);
+
+//приклад вставтляння кольору:: color: getColor('primary-text');
+
+@function getColor($key) {
+  @return map-get($colors, $key);
+}
