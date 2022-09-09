@@ -1,0 +1,308 @@
+.site-nav__link--home {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px
+    
+}
+.site-nav__link--home {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-decoration:none;
+    position: relative;
+}
+.site-nav_home {
+    padding-top: 44px;
+    margin-left: 100px;
+}
+
+.site-nav__link--library {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px
+} 
+.site-nav__link--library {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-decoration:none;
+    position: relative;
+}
+    
+
+.site-nav_library {
+    padding-top: 44px;
+    margin-left: 40px;
+}
+
+.site-nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+   
+   
+}
+.film-logo {
+    width: 24px;
+    height: 24px;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.site-nav_item--film {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+line-height: 35px;
+}
+.site-nav_item--film {
+    color: #FFFFFF;
+    padding-top: 40px;
+    margin-left: 10px;
+}
+::placeholder {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+   
+}
+.colortext {
+    color: red;
+}
+.some-input {
+    position: relative;
+}
+
+
+@media screen and (max-width: 767px) {
+   
+    .overlay {
+        background-image: url('/src/images/overlay/bg-mob.jpg');
+        height: 230px;
+        margin: 0;
+        padding: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .site-nav_item--film {
+        display: none;
+    }
+    .some-input {
+         border: none;
+         border-bottom: 1px solid white;
+         background-color: transparent;
+         color: inherit;
+         outline: none;
+         width: 265px;
+         color: #FFFFFF;
+         
+    }
+    .search-form {
+        display: flex;
+        justify-content: center;
+        margin-top: 80px;
+        position: relative;
+       
+    }
+    .footer {
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    background-color: #F7F7F7;
+    
+    }
+    .footer-list  {
+       list-style: none;
+       display: flex;
+       justify-content: center;
+       padding-top: 30px;
+      
+       
+    }
+    .search {
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        bottom: 7px;
+        margin-left: 250px;
+    }
+    
+   
+}
+@media screen and (min-width:768px) {
+   
+    .overlay {
+        background-image: url('/src/images/overlay/bg-tab.jpg');
+        height: 216px;
+        margin: 0;
+        padding: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .site-nav_film {
+        padding-top: 40px;
+       
+    }
+    .film-logo {
+        margin-top: 45px;
+    }
+    .site-nav_home {
+        padding-top: 49px;
+        margin-left: 400px;
+    }
+    .site-nav_library{
+        padding-top: 49px;
+    }
+    .some-input {
+        margin: 0;
+    }
+    .some-input {
+        border: none;
+         border-bottom: 1px solid white;
+         background-color: transparent;
+         color: inherit;
+         outline: none;
+         width: 336px;
+         color: #FFFFFF;
+    }
+    .search-form {
+        display: flex;
+        justify-content: center;
+    }
+    .search-form {
+        margin-top: 60px;
+    }
+    .footer {
+        height: 80px;
+        margin: 0;
+        padding: 0;
+        background-color: #F7F7F7;
+        
+        }
+        .footer-list  {
+           list-style: none;
+           display: flex;
+           justify-content: center;
+           text-align: center;
+           padding-top: 30px;;
+           margin-right: 30px;
+        }
+        .search {
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            top: 0;
+            margin-top: 133px;
+            margin-left: 160px;
+            
+        }
+       
+   }
+
+@media screen and (min-width:1280px) {
+   
+    .overlay {
+        background-image: url('/src/images/overlay/bg-desk.jpg');
+        height: 216px;
+        margin: 0;
+        padding: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .site-nav_home{
+        padding-top: 49px;
+        margin-left: 898px;
+    }
+    .some-input {
+        width: 394px;
+    }
+    .search-form {
+        margin-top: 60px;
+    }
+    .footer {
+        height: 77px;
+        margin: 0;
+        padding: 0;
+        background-color: #F7F7F7;
+        
+        }
+        .footer-list  {
+           list-style: none;
+           display: flex;
+           justify-content: center;
+           text-align: center;
+           margin-right: 70px;
+           margin: 0;
+          padding-top: 34px;;
+          
+        }
+        .search {
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            top: 0;
+            margin-top: 133px;
+            margin-left: 190px;
+            
+        }
+        
+   
+    
+}
+
+.site-nav__link--home.site-nav__current::after {
+    content: "";
+    position: absolute;
+    display: block;
+    border: 1px solid #FF001B;
+    background-color:  #FF001B;
+    
+    left: 154;
+    width: 0;
+    height: 3px;
+    top: 60;
+    width: 35px;
+    
+}
+.site-nav__link--home.site-nav__current:after {
+    content: "";
+    position: absolute;
+    display: block;
+    border: 1px solid #FF001B;
+    background-color:  #FF001B;
+    
+    left:0;
+    width: 0;
+    height: 3px;
+    top: 14;
+    width: 35px;
+   
+}
+
+.site-nav__link--library.site-nav__current:after {
+    content: "";
+    position: absolute;
+    display: block;
+   
+    border: 1px solid #FF001B;
+    background-color:  #FF001B;
+    
+    right:0;
+    width: 0;
+    height: 3px;
+    top: 14;
+    width: 68px;
+    
+}
+
+
