@@ -1,11 +1,11 @@
 $colors: (
-  'accent':#FF6B08,
-  'hover': #FF001B,
+  'accent': #ff6b08,
+  'hover': #ff001b,
+  'modal-text-color': #8c8c8c,
+  'primary-text': #000000,
+  'extra-text': #ffffff,
 
-  'primary-text':#000000,
-  'extra-text': #FFFFFF,
-
-  'footer': #F7F7F7,
+  'footer': #f7f7f7,
 );
 
 //приклад вставтляння кольору:: color: getColor('primary-text');
