@@ -31,7 +31,7 @@
             font-size: 12px;
             line-height: 16px;
             text-transform: uppercase;
-            color: #FFFFFF;
+            color: getColor('extra-text');
             background-color: transparent;
             
         }
@@ -97,7 +97,7 @@
         height: 44px;
         // background: #FF6B01;
         box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
-        border: 1px solid #FFFFFF;
+        border: 1px getColor('extra-text');
         border-radius: 5px;
         margin-top: 40px;
         margin-left: 15px;
@@ -108,7 +108,7 @@
         font-size: 12px;
         line-height: 16px;
         text-transform: uppercase;
-        color: #FFFFFF;
+        color: getColor('extra-text');
         background-color: transparent;
         margin-left: 216px;
     }
@@ -117,7 +117,7 @@
         height: 44px;
         // background: #FF6B01;
         box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
-        border: 1px solid #FFFFFF;
+        border: 1px getColor('extra-text');
         border-radius: 5px;
         margin-top: 40px;
         margin-left: 15px;
@@ -128,7 +128,7 @@
         font-size: 12px;
         line-height: 16px;
         text-transform: uppercase;
-        color: #FFFFFF;
+        color: getColor('extra-text');
         background-color: transparent;
         margin-left: 32px;
     }
@@ -193,7 +193,7 @@
         height: 44px;
         // background: #FF6B01;
         box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
-        border: 1px solid #FFFFFF;
+        border: 1px solid getColor('extra-text');
         border-radius: 5px;
         margin-top: 40px;
         margin-left: 15px;
@@ -204,7 +204,7 @@
         font-size: 12px;
         line-height: 16px;
         text-transform: uppercase;
-        color: #FFFFFF;
+        color: getColor('extra-text');
         background-color: transparent;
         margin-left: 484px;
     }
@@ -212,7 +212,7 @@
         width: 129.53px;
         height: 44px;
         box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
-        border: 1px solid #FFFFFF;
+        border: 1px solid getColor('extra-text');
         border-radius: 5px;
         margin-top: 40px;
         margin-left: 15px;
@@ -223,7 +223,7 @@
         font-size: 12px;
         line-height: 16px;
         text-transform: uppercase;
-        color: #FFFFFF;
+        color: getColor('extra-text');
         background-color: transparent;
         margin-left: 32px;
     }
