@@ -1,8 +1,8 @@
 /* кнопки в модалке ADD TO WATCH/QUEUE */
 .change-button__wrapper {
     position: relative;
-    min-width: 200px;
-    height: 50px;
+    min-width: 136px;
+    height: 44px;
 }
 
 .change-button__wrapper .change-button__checkbox {
@@ -26,9 +26,9 @@
 }
 
 .change-button__wrapper .change-button__button-on {
-    background-color: #FF6B01;
-    color: #FFFFFF;
-    border: 1px solid #000000;
+    background-color: $span-bg-color;
+    color: getColor('extra-text');
+    border: 1px solid getColor('primary-text');
     cursor: pointer;
     font-style: normal;
     font-weight: 500;
@@ -41,14 +41,14 @@
 }
 
 .change-button__wrapper .change-button__button-off {
-    color: #000000;
-    background-color: #FFFFFF;
+    color: getColor('primary-text');
+    background-color: getColor('extra-text');
     cursor: pointer;
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
-    border: 1px solid #000000;
+    border: 1px solid getColor('primary-text');
     text-transform: uppercase;
     text-align: center;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -67,8 +67,8 @@
 }
 
 .change-button__wrapper:hover .change-button__button-off {
-    background-color: #FFFFFF;
-    color: #FF6B01;
+    background-color: getColor('extra-text');
+    color: $span-bg-color;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transform: scale(1.05) rotateX(0deg) translateZ(25px);
 }
