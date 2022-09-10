@@ -1,0 +1,269 @@
+
+
+@media screen and (max-width: 767px) {
+   
+    .overlay-lab {
+        background-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.56), 
+            rgba(0, 0, 0, 0.56)),
+        url('/src/images/overlay/lib-mob.jpg');
+        height: 230px;
+        margin: 0;
+        padding: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        .button-watched, .button-queue {
+            width: 129.53px;
+            height: 44px;
+            // background: #FF6B01;
+            box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
+            border: 1px solid #FFFFFF;
+            border-radius: 5px;
+            margin-top: 60px;
+            margin-left: 15px;
+        
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            text-transform: uppercase;
+            color: getColor('extra-text');
+            background-color: transparent;
+            
+        }
+        
+        }
+        .button-watched:before {
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 42px;
+            background: rgba(255,165,0,0.5);
+            border-radius: 5px;
+            transition: all 1s ease;
+        }
+        .button-watched:hover:before {
+            width: 100%;
+        }
+        
+        .button-watched {
+            position: relative;
+        }
+        
+        .button-queue:before {
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 42px;
+            background: rgba(255,165,0,0.5);
+            border-radius: 5px;
+            transition: all 1s ease;
+        }
+        .button-queue:hover:before {
+            width: 100%;
+        }
+        
+        .button-queue {
+            position: relative;
+        }
+        
+    }
+    
+@media screen and (min-width:768px) {
+   
+    .overlay-lab {
+        background-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.56), 
+            rgba(0, 0, 0, 0.56)),
+        url('/src/images/overlay/lib-tab.jpg');
+        height: 216px;
+        margin: 0;
+        padding: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .button-watched {
+        width: 129.53px;
+        height: 44px;
+        // background: #FF6B01;
+        box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
+        border: 1px getColor('extra-text');
+        border-radius: 5px;
+        margin-top: 40px;
+        margin-left: 15px;
+    
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: getColor('extra-text');
+        background-color: transparent;
+        margin-left: 216px;
+    }
+    .button-queue {
+        width: 129.53px;
+        height: 44px;
+        // background: #FF6B01;
+        box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
+        border: 1px getColor('extra-text');
+        border-radius: 5px;
+        margin-top: 40px;
+        margin-left: 15px;
+    
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: getColor('extra-text');
+        background-color: transparent;
+        margin-left: 32px;
+    }
+    .button-watched:before {
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 42px;
+        background: rgba(255,165,0,0.5);
+        border-radius: 5px;
+        transition: all 1s ease;
+    }
+    .button-watched:hover:before {
+        width: 100%;
+    }
+    
+    .button-watched {
+        position: relative;
+    }
+    
+    .button-queue:before {
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 42px;
+        background: rgba(255,165,0,0.5);
+        border-radius: 5px;
+        transition: all 1s ease;
+    }
+    .button-queue:hover:before {
+        width: 100%;
+    }
+    
+    .button-queue {
+        position: relative;
+    }
+    
+}
+    
+
+@media screen and (min-width:1280px) {
+   
+    .overlay-lab {
+        background-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.56), 
+            rgba(0, 0, 0, 0.56)),
+        url('/src/images/overlay/lib-deskt.jpg');
+        height: 216px;
+        margin: 0;
+        padding: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .button-watched {
+        width: 129.53px;
+        height: 44px;
+        // background: #FF6B01;
+        box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
+        border: 1px solid getColor('extra-text');
+        border-radius: 5px;
+        margin-top: 40px;
+        margin-left: 15px;
+    
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: getColor('extra-text');
+        background-color: transparent;
+        margin-left: 484px;
+    }
+    .button-queue {
+        width: 129.53px;
+        height: 44px;
+        box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
+        border: 1px solid getColor('extra-text');
+        border-radius: 5px;
+        margin-top: 40px;
+        margin-left: 15px;
+    
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: getColor('extra-text');
+        background-color: transparent;
+        margin-left: 32px;
+    }
+    .button-watched:before {
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 42px;
+        background: rgba(255,165,0,0.5);
+        border-radius: 5px;
+        transition: all 1s ease;
+    }
+    .button-queue :hover:before {
+        width: 100%;
+    }
+    
+    .button-watched {
+        position: relative;
+    }
+    
+    .button-queuet:before {
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 42px;
+        background: rgba(255,165,0,0.5);
+        border-radius: 5px;
+        transition: all 1s ease;
+    }
+    .button-queue:hover:before {
+        width: 100%;
+    }
+    
+    .button-queue {
+        position: relative;
+    }
+    
+}
+
