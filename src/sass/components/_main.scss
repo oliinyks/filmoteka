@@ -63,8 +63,8 @@
         border-radius: 5px;
 
         @media screen and (max-width: 767px) {
-                width: 100%;
-                height: 100%;
+            width: 100%;
+            weight: 100%;
         }
 
         @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -76,7 +76,7 @@
         margin-top: 12px;
         margin-bottom: 0;
         text-transform: uppercase;
-        color: $title-text-color;
+        color: getColor('title-text-color');
         font-family: 'Roboto';
         font-weight: 500;
 
@@ -97,7 +97,7 @@
     }
 
     &__info {
-        color: $text-color;
+        color: getColor('text-color');
         font-family: 'Roboto';
         font-weight: 500;
 
@@ -118,13 +118,13 @@
     }
 
     &__rate {
-        color: $text-white-color;
+        color: getColor('text-white-color');
         font-family: 'Roboto';
         font-weight: 500;
         font-size: 12px;
         line-height: 1.17;
         text-align: center;
-        background-color: $span-bg-color;
+        background-color: getColor('span-bg-color');
         border-radius: 5px;
 
         @media screen and (min-width: 1280px) {

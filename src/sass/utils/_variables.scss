@@ -4,15 +4,13 @@ $colors: (
   'modal-text-color': #8c8c8c,
   'primary-text': #000000,
   'extra-text': #ffffff,
-
+  'background-body-color': #E5E5E5,
+  'title-text-color': #000000,
+  'text-color': #FF6B08,
+  'text-white-color': #FFFFFF,
+  'span-bg-color': #FF6B01,
   'footer': #f7f7f7,
 );
-
-$background-body-color: #E5E5E5;
-$title-text-color: #000000;
-$text-color: #FF6B08;
-$text-white-color: #FFFFFF;
-$span-bg-color: #FF6B01;
 
 //приклад вставтляння кольору:: color: getColor('primary-text');
 
