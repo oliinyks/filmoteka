@@ -1,0 +1,249 @@
+body.show-modal .backdrop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+body.show-modal .modal-card {
+  transform: scale(1);
+}
+.bg-scrolling-element-when-modal-open {
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+.backdrop {
+  z-index: 1001;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  transition-duration: 250ms;
+  transition-property: all;
+  @include for-tablet-up {
+  }
+  @include for-desktop-up {
+  }
+}
+.modal-card {
+  font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 280px;
+  height: 100%;
+  overflow: scroll;
+  padding: 48px 20px 40px;
+  transform: translate(-50%);
+  background-color: $text-white-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  @include for-tablet-up {
+    width: 704px;
+    height: 552px;
+    padding: 40px 72px 40px 36px;
+    display: flex;
+    justify-content: space-between;
+    transform: translate(-50%, -50%);
+  }
+  @include for-desktop-up {
+    width: 806px;
+    height: 558px;
+    padding: 40px 12px;
+    display: flex;
+    justify-content: space-between;
+    transform: translate(-50%, -50%);
+  }
+}
+// СВГ закрытие модального окна
+.modal-card__close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 5px;
+  right: 1px;
+  padding: 20px;
+  position: absolute;
+  border: none;
+  background: $text-white-color;
+  cursor: pointer;
+  @include for-tablet-up {
+    top: 5px;
+    right: 2px;
+  }
+}
+.modal-card__icon-exit {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+//
+.modal-card__film-title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  margin-bottom: 15px;
+}
+.modal-card__table {
+  border-collapse: collapse;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 15px;
+}
+.modal-card__table-refs {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: getColor('modal-text-color');
+}
+.modal-card__table-value {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 40px;
+  @include for-tablet-up {
+    padding-left: 50px;
+  }
+  @include for-desktop-up {
+    padding-left: 95px;
+  }
+}
+
+.modal-card__about {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.modal-card__description {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+.modal-card__button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  @include for-tablet-up {
+    justify-content: start;
+    & > :first-child {
+      margin-right: 15px;
+    }
+  }
+  @include for-tablet-up {
+  }
+  @media screen and (min-width: 1024px) {
+    margin-left: 8px;
+  }
+}
+
+.modal-card__img-wrapper {
+  margin-bottom: 30px;
+  width: 240px;
+  height: 357px;
+  overflow: hidden;
+  @include for-tablet-up {
+    width: 264px;
+    height: 374px;
+    margin-bottom: 0px;
+  }
+  @include for-desktop-up {
+    width: 375px;
+    height: 478px;
+    margin-bottom: 0px;
+  }
+}
+
+.modal-card__img-wrapper > img {
+  display: block;
+  width: 240px;
+  height: 356px;
+  object-fit: fill;
+  @include for-tablet-up {
+    width: 264px;
+    height: 374px;
+    object-fit: fill;
+  }
+  @include for-desktop-up {
+    width: 370px;
+    height: 478px;
+    object-fit: fill;
+  }
+}
+
+.modal-card__film-desсriptoin {
+  width: 240px;
+  @include for-tablet-up {
+    width: 264px;
+  }
+  @include for-desktop-up {
+    width: 396px;
+    margin-left: 20px;
+  }
+}
+
+.modal-card__button {
+  display: block;
+  cursor: pointer;
+  min-width: 112px;
+  height: 44px;
+  padding: 14px 0 12px 0;
+  border: 1px solid $title-text-color;
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline: none;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: $title-text-color;
+  background-color: $text-white-color;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all var(--duration) var(--timing-function);
+  @include for-tablet-up {
+    min-width: 125px;
+  }
+  @include for-desktop-up {
+    min-width: 136px;
+  }
+}
+
+.modal-card__button:hover,
+.modal-card__button:focus-visible,
+.modal-card__button:active {
+  box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+  background-color: $span-bg-color;
+  color: $text-white-color;
+}
+
+.modal__item-desc--orange {
+  background: $span-bg-color;
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 14px;
+  color: $text-white-color;
+  padding: 1px 9px;
+}
+.modal__item-desc--grey {
+  font-size: 12px;
+  line-height: 14px;
+  color: $title-text-color;
+  background: #f7f7f7;
+  border-radius: 5px;
+  padding: 1px 5px;
+}

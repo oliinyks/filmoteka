@@ -1,0 +1,19 @@
+.pagination {
+    padding-bottom: 40px;
+
+
+    @media screen and (min-width:768px) {
+        padding-bottom: 60px;
+        
+    }
+}
+
+.tui-pagination .tui-is-selected,
+.tui-pagination strong {
+    background-color: #FF001B !important;
+    border-color: #FF001B !important;
+}
+
+ .pagination .tui-pagination {
+    margin: 0;
+}

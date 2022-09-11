@@ -1,0 +1,30 @@
+.arrow-top {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40px;
+	width: 40px;
+	color: getColor('modal-text-color');
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	cursor: pointer;
+	border: 2px solid getColor('modal-text-color');
+	border-radius: 50%;
+ }
+ .arrow-top:before {
+	content: '▲';
+ }
+ 
+ .arrow-top:hover {
+	color: getColor('accent');
+	border-color: getColor('accent');
+ }
+ 
+ .arrow-hidden {
+	display: none;
+ }
+ 
+ .arrow-show {
+	display: flex;
+ }
