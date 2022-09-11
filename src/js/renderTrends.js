@@ -8,11 +8,11 @@ function renderTrandFilms(data) {
         ({ poster_path, title, id, genre_ids, release_date, vote_average }) => {
         const getNames = getGenres(genre_ids);
         const year = parseInt(release_date);
-        const rating = vote_average.toFixed(1);
+        // const rating = vote_average.toFixed(1);
         return `<li class="gallery__item movie-card" data-id=${id}>
         <a href="/" class="gallery__link movie-card__link link" data-id=${id}>
     <div class="gallery__wrapper" data-id=${id}>
-    <span class="gallery__vote" data-id=${id}>${rating}</span>
+    
         <img
             class="gallery__img movie-card__image"
             src="https://www.themoviedb.org/t/p/w500${poster_path}"
@@ -36,3 +36,7 @@ function renderTrandFilms(data) {
 }
 
 export { renderTrandFilms };
+
+
+
+// <span class="gallery__vote" data-id=${id}>${rating}</span>

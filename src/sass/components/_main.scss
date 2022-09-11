@@ -7,6 +7,11 @@
     }
 }
 
+.gallery__genres::after {
+    content: '|';
+    margin-left: 4px;
+}
+
 .movie-card {
     width: calc((100% - 2 * 16px) / 3);
     margin-right: 16px;
