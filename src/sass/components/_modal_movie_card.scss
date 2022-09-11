@@ -93,6 +93,7 @@ body.show-modal .modal-card {
 }
 //
 .modal-card__film-title {
+  color: $title-text-color;
   font-weight: 500;
   font-size: 20px;
   line-height: 23px;
@@ -111,6 +112,7 @@ body.show-modal .modal-card {
   color: getColor('modal-text-color');
 }
 .modal-card__table-value {
+  color: $title-text-color;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 40px;
@@ -131,6 +133,7 @@ body.show-modal .modal-card {
   margin-bottom: 8px;
 }
 .modal-card__description {
+  color: $title-text-color;
   font-weight: 500;
   font-size: 12px;
   line-height: 20px;
