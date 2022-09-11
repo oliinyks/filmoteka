@@ -1,0 +1,39 @@
+<div data-modal class="backdrop is-hidden">
+  <button data-modal-close class="modal__close-button" type="button" >
+    <svg class="modal__icon-cross">
+        <use href="./images/sprite.svg#icon-cross_modal"></use>
+    </svg>
+  </button>
+  <div class="container-auth right-panel-active">
+      <div class="container-auth__form container-auth--signup">
+          <form action="#" class="form" id="formUp">
+              <h2 class="form__title">Sign up</h2>
+                  <input class="input" data-emailUp type="email" placeholder="E-mail">
+                  <input class="input" data-passwordUp type="password" placeholder="Password">
+              <button data-signUp type="button" class="btn">Sign up</button>
+          </form>
+      </div>
+    
+      <div class="container-auth__form container-auth--signin">
+        <form action="#" class="form" id="formIn">
+            <h2 class="form__title">Sign in</h2>
+              <input class="input" data-emailIn type="email" placeholder="E-mail">
+              <input class="input" data-passwordIn type="password" placeholder="Password">
+              <a href="#" class="form_link">Forgot your password?</a>
+              <button data-signIn type="button" class="btn">Sign in</button>
+              <button data-logOut type="button" class="btn">Log out</button>
+        </form>   
+      </div>
+      
+      <div class="container-auth__overlay-auth">
+        <div class="overlay-auth">
+            <div class="overlay__panel overlay--left">
+              <button type="button" class="btn" id="signIn">Sign in</button>
+            </div>
+            <div class="overlay__panel overlay--right">
+              <button class='btn' type="submit" id="signUp">Sign up</button>
+            </div>
+          </div> 
+      </div>
+    </div>
+</div>
