@@ -6,7 +6,8 @@
 	--yellow-background: #fefbbe;
 	--yellow-border: #f5ea71a2;
 	/** dark side **/
-	--indigo: rgba(91, 91, 91, 0.8);
+	--indigo: rgba(47, 47, 47, 0.8);
+	--indigo-border: rgba(222, 222, 222, 0.8);
 	--gray: #e8e8ea;
 	/** general **/
 	--white: #fff;
@@ -31,11 +32,16 @@
 //---------------dark-theme---------------------
 .dark-theme{
 	background-color: var(--indigo);
+	color: var(--white);
+	
+	.movie-card__title{
+	color: var(--white);
+	}
 }
 
 .toggle--checkbox:checked+.toggle--label {
 	background: var(--indigo);
-	border-color: var(--indigo);
+	border-color: var(--indigo-border);
 	/** Change the cloud to stars **/
 	/** Change the sun into the moon **/
 	/** Show the dimples on the moon **/
@@ -66,7 +72,7 @@
 	background: var(--white);
 	border-color: var(--gray);
 	animation-name: switch;
-	animation-duration: 350ms;
+	animation-duration: 100ms;
 	animation-fill-mode: forwards;
 }
 
@@ -123,7 +129,7 @@
 
 .toggle--label:before {
 	animation-name: reverse;
-	animation-duration: 350ms;
+	animation-duration: 100ms;
 	animation-fill-mode: forwards;
 	transition: all 350ms ease-in;
 	content: "";
