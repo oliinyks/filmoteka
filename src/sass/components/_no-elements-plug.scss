@@ -1,0 +1,51 @@
+.no-element {
+    width: 300px;
+        height: 100px;
+        position: absolute;
+        left: 50%;
+        top: 70%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+}
+
+.no-element span {
+
+    position: absolute;
+        top: 15px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        letter-spacing: 2px;
+        color: getColor('hover');
+        left: 10%;
+        right: 10%;
+}
+
+.no-element .gif-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -175%);
+    width: 25%;
+}
+
+@include for-tablet-up {
+    .loader-wrapper {
+            width: 500px;
+            height: 100px;
+            top: 80%;
+        }
+
+        .no-element span {             
+            top: 65px;            
+            font-size: 25px;
+            letter-spacing: 5px;
+            line-height: 30px;
+            left: -25%;
+            right: -25%;
+        }
+
+        .no-element .gif-wrap {            
+            top: 172%;            
+            width: 50%;
+        }
+}
