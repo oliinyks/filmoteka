@@ -1,6 +1,4 @@
 const checboxEl = document.querySelector('#toggle');
-// const container = document.getElementById('tui-pagination-container');
-// const container = document.querySelectorAll('a');
 const paginationEl = document.querySelector('.tui-pagination');
 const FORM_KEY = 'day-night';
 
@@ -31,14 +29,12 @@ function onChecboxClick(e) {
 function darkTheme (){
 	localStorage.setItem(FORM_KEY, false);
 	document.body.classList.add('dark-theme');
-
 	paginationEl.classList.add('dark-theme');
 	
 }
 function lightTheme(){
 	localStorage.setItem(FORM_KEY, true)
 	document.body.classList.remove('dark-theme');
-
 	paginationEl.classList.remove('dark-theme');
 }
 

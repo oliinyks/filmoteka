@@ -28,11 +28,6 @@
 	display: none;
 }
 
-// .toggle--checkbox:checked {
-// 	/** This will all flip from sun to moon **/
-// 	/** Change the label color **/
-// }
-
 //---------------dark-theme---------------------
 .dark-theme{
 	background-color: var(--indigo);
@@ -52,20 +47,12 @@
 	.modal-movie-card__icon-exit{
 		fill: var(--white);
 	}
-	// .tui-pagination{
-	// 	color: var(--white);
-	// }
-	// .tui-page-btn{
-	// 	color: var(--white);
-	// }
 }
 
 .toggle--checkbox:checked+.toggle--label {
 	background: var(--indigo);
 	border-color: var(--indigo-border);
-	/** Change the cloud to stars **/
-	/** Change the sun into the moon **/
-	/** Show the dimples on the moon **/
+
 }
 
 .toggle--checkbox:checked+.toggle--label .toggle--label-background {
