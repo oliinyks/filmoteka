@@ -1,4 +1,4 @@
-import { dataLocalStorage } from "./local-storage";
+import { dataLocalStorage } from './local-storage';
 const API_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = '70a1ccf907025a1a646b674d3a53bd64';
 //
@@ -10,6 +10,7 @@ const modalCard = document.querySelector('.modal-movie-card');
 let id;
 //Берем id с карточки по которой кликнули
 function openCardMovie(e) {
+  console.log(e.currentTarget);
   document.body.classList.add('show-modal');
   window.addEventListener('keydown', onEscKeyPress);
   id = Number(e.target.getAttribute('data-id'));
@@ -24,19 +25,19 @@ async function modalCreateMark() {
     .then(response => response.json())
     .then(movie => {
       // Жанры
-      let genre = '';
-      let genres = movie.genres.map(({ name }) => {
-        genre = name;
+      let genreMovieCard = [];
+      let genresMovieCard = movie.genres.map(({ name }) => {
+        genreMovieCard.push(name);
       });
       document
         .querySelector('.modal-movie-card')
-        .insertAdjacentHTML('afterbegin', createModal(movie));
-         dataLocalStorage(id);
+        .insertAdjacentHTML('afterbegin', createModal(movie, genreMovieCard));
+      dataLocalStorage(id);
     })
     .catch(error => console.log(error));
 }
 // Разметка
-function createModal(movie, genre) {
+function createModal(movie, genreMovieCard) {
   modalCard.innerHTML = ``;
   return `
   <div class="modal-movie-card__img-wrapper">
@@ -73,7 +74,7 @@ function createModal(movie, genre) {
         </tr>
         <tr>
           <td class="modal-movie-card__table-refs">Genre</td>
-          <td class="modal-movie-card__table-value">${genre}</td>
+          <td class="modal-movie-card__table-value">${genreMovieCard}</td>
         </tr>
       </table>
       <p class="modal-movie-card__about">About</p>
