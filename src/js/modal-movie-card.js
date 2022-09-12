@@ -1,3 +1,4 @@
+import { dataLocalStorage } from "./local-storage";
 const API_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = '70a1ccf907025a1a646b674d3a53bd64';
 //
@@ -15,6 +16,7 @@ function openCardMovie(e) {
   document.body.style.overflow = 'hidden';
   modalCreateMark();
 }
+
 //Запрос по id карточки на которую кликнули и рендерим разметку
 async function modalCreateMark() {
   let url = `${API_URL}movie/${id}?api_key=${API_KEY}`;
@@ -28,7 +30,8 @@ async function modalCreateMark() {
       });
       document
         .querySelector('.modal-movie-card')
-        .insertAdjacentHTML('afterbegin', createModal(movie, genre));
+        .insertAdjacentHTML('afterbegin', createModal(movie));
+         dataLocalStorage(id);
     })
     .catch(error => console.log(error));
 }
@@ -83,7 +86,7 @@ function createModal(movie, genre) {
 <label>
 <input type="checkbox" name="watched" class="change-button__checkbox js-watched">
 <span type="button" class="change-button__button-on removeAddWatch">Remove from watched</span>
-<span type="button" class="change-button__button-off addwatch">Add to watched</span>
+<span type="button" class="change-button__button-off addWatch">Add to watched</span>
 </label>
 </div>
 <div class="change-button__wrapper">
@@ -114,9 +117,7 @@ function onEscKeyPress(e) {
     closeCardMovie();
   }
 }
-//
 openModal.addEventListener('click', openCardMovie);
 closeModalBtn.addEventListener('click', closeCardMovie);
 backdrop.addEventListener('click', backdropClickClose);
-//
 export { openCardMovie };
