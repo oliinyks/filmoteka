@@ -1,5 +1,7 @@
-console.log('HI');
-const testArray = [
+import { getGenres, getG } from './getGenres';
+
+//============================тест
+const testWatch = [
   {
     id: 299536,
     poster_path: '/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg',
@@ -16,6 +18,8 @@ const testArray = [
     release_date: '2018-05-15',
     vote_average: 7.6,
   },
+]
+const testQueue = [
   {
     id: 500664,
     poster_path: '/adOzdWS35KAo21r9R4BuFCkLer6.jpg',
@@ -26,36 +30,63 @@ const testArray = [
   },
 ];
 
-const movieCard = document.querySelector('.movies-cardset');
-const section = document.getElementById('myLibrary');
+const btnWatch = document.querySelector(".button-watched") 
+const btnQueue =document.querySelector (".button-queue") 
+const gallery = document.querySelector('.library-list')
 
-// section.innerHTML = ''
 
-localStorage.setItem('testData', JSON.stringify(testArray));
-let dataStorage = localStorage.getItem('testData');
+localStorage.setItem('watchRes', JSON.stringify(testWatch));
+localStorage.setItem('queueRes', JSON.stringify(testQueue));
 
-dataStorage = JSON.parse(dataStorage);
+let dataW = localStorage.getItem('watchRes');
+let dataQ = localStorage.getItem('queueRes');
 
-function createGallary() {
-  return dataStorage
-    .map(({ poster_path, title, genre_ids, vote_average, release_date }) => {
-      return `
-     <li class="movie-card">
-        <a href="#" class="movie-card__link link">
-            <img src="${poster_path}" width="395" height="574" alt="${title}" class="movie-card__image">
-            <h3 class="movie-card__title">${title}</h3>
-            <div class="movie-card__info">
-                <span class="movie-card__genre">${genre_ids}</span>
-            |
-            <span class="movie-card__year">${release_date}</span>
-            <span class="movie-card__rate">${vote_average}</span>
-            </div>
-        </a>
-        </li>
-    `;
-    })
+dataW = JSON.parse(dataW);
+console.log(dataW)
+dataQ = JSON.parse(dataQ);
+console.log(dataQ)
+
+
+
+function renderLocalStorage(data) {
+  gallery.innerHTML = '';
+    const markup = data
+      .map(
+        ({ poster_path, title, id, genre_ids, release_date, vote_average }) => {
+        const getNames = getGenres(genre_ids);
+        const year = parseInt(release_date);
+        // const rating = vote_average.toFixed(1);
+        return `<li class="gallery__item movie-card" data-id=${id}>
+        <a href="#" class="gallery__link movie-card__link link" data-id=${id}>
+    <div class="gallery__wrapper" data-id=${id}>
+    
+        <img
+            class="gallery__img movie-card__image"
+            src="https://www.themoviedb.org/t/p/w500${poster_path}"
+            alt="${title}"
+            loading="lazy"
+            data-id=${id}
+            onerror="this.src='https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg?tr=fo-auto,di-';"
+            >
+    </div>
+    <div class="gallery__thumb movie-card__info" data-id=${id}>
+        <h3 class="gallery__name movie-card__title" data-id=${id}>${title}</h3>
+        <p class="gallery__genres movie-card__genre" data-id=${id}>${getNames}</p>
+        <span class="gallery__year movie-card__year" data-id=${id}>${year ? year : 'n/a'}</span>
+    </div>
+    </a>
+</li>`;
+      }
+    )
     .join('');
+  gallery.insertAdjacentHTML('beforeend', markup);
 }
 
-const cardMarkup = createGallary(dataStorage);
-movieCard.insertAdjacentHTML('beforeend', cardMarkup);
+
+
+
+
+const qMarcup = renderLocalStorage(dataQ)
+btnQueue.addEventListener('submit', qMarcup)
+const wMarcup = renderLocalStorage(dataW)
+btnWatch.addEventListener('submit', wMarcup)
