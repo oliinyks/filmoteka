@@ -10,7 +10,7 @@ function renderTrandFilms(data) {
         const year = parseInt(release_date);
         // const rating = vote_average.toFixed(1);
         return `<li class="gallery__item movie-card" data-id=${id}>
-        <a href="/" class="gallery__link movie-card__link link" data-id=${id}>
+        <a href="#" class="gallery__link movie-card__link link" data-id=${id}>
     <div class="gallery__wrapper" data-id=${id}>
     
         <img
