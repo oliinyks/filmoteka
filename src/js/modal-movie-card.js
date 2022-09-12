@@ -1,6 +1,5 @@
 import { dataLocalStorage } from './local-storage';
-const API_URL = 'https://api.themoviedb.org/3/';
-const API_KEY = '70a1ccf907025a1a646b674d3a53bd64';
+import { API_URL, API_KEY } from './key-url';
 //
 const openModal = document.querySelector('ul.gallery__list');
 const closeModalBtn = document.querySelector('[data-modal-close]');
