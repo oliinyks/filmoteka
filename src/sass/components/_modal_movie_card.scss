@@ -1,6 +1,5 @@
 body.show-modal .modal-movie-card__backdrop {
   opacity: 1;
-  visibility: visible;
   pointer-events: initial;
 }
 body.show-modal .modal-movie-card {
@@ -17,7 +16,6 @@ body.show-modal .modal-movie-card {
   z-index: 1001;
   opacity: 0;
   pointer-events: none;
-  visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,8 +33,7 @@ body.show-modal .modal-movie-card {
   }
 }
 .modal-movie-card {
-  font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: Roboto, sans-serif;
   width: 280px;
   height: 100%;
   padding: 48px 20px 40px;

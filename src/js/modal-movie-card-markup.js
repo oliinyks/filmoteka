@@ -1,28 +1,4 @@
-import { dataLocalStorage } from './local-storage';
-import { API_URL, API_KEY } from './key-url';
-import { id, openCardMovie } from './modal-movie-card-open';
-import { disableLoader } from './loader';
-//
-const modalCard = document.querySelector('.modal-movie-card');
-//
-async function modalCreateMarkup() {
-  let url = `${API_URL}movie/${id}?api_key=${API_KEY}`;
-  await fetch(url)
-    .then(response => response.json())
-    .then(movie => {
-      let genreMovieCard = [];
-      let genresMovieCard = movie.genres.map(({ name }) => {
-        genreMovieCard.push(name);
-      });
-      modalCard.insertAdjacentHTML(
-        'beforeend',
-        createModal(movie, genreMovieCard)
-      );
-      dataLocalStorage(id);
-    })
-    .catch(error => console.log(error));
-  disableLoader();
-}
+import { modalCreateMarkup } from './modal-movie-card';
 function createModal(movie, genreMovieCard) {
   modalCard.innerHTML = ``;
   return `
@@ -86,6 +62,4 @@ function createModal(movie, genreMovieCard) {
     </div>
     `;
 }
-
-export { openCardMovie };
-export { modalCreateMarkup };
+export { createModal };
