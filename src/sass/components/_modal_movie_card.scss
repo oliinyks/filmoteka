@@ -79,8 +79,8 @@ body.show-modal .modal-movie-card {
   cursor: pointer;
   background-color: $text-white-color;
   @include for-tablet-up {
-    top: 1px;
-    right: 1px;
+    top: 2px;
+    right: 2px;
   }
 }
 .modal-movie-card__icon-exit {
