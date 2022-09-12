@@ -15,6 +15,7 @@
 
 .movie-card {
     width: calc((100% - 2 * 16px) / 3);
+    height: 100%;
     margin-right: 16px;
     margin-bottom: 32px;
 
@@ -66,6 +67,7 @@
 
 
     &__image {
+        box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
         border-radius: 5px;
 
         @media screen and (min-width: 1280px) {
