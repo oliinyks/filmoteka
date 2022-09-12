@@ -23,18 +23,18 @@ async function modalCreateMark() {
   await fetch(url)
     .then(response => response.json())
     .then(movie => {
-      let genres = '';
-      const genreSpisoc = movie.genres.map(({ name }) => {
-        genres = name;
+      let genre = '';
+      let genres = movie.genres.map(({ name }) => {
+        genre += name;
       });
       document
         .querySelector('.modal-movie-card')
-        .insertAdjacentHTML('afterbegin', createModal(movie, genres));
+        .insertAdjacentHTML('afterbegin', createModal(movie, genre));
     })
-    .catch(error => console.log(error.message));
+    .catch(error => console.log(error));
 }
 // Разметка
-function createModal(movie, genres) {
+function createModal(movie, genre) {
   modalCard.innerHTML = ``;
   return `
   <div class="modal-movie-card__img-wrapper">
@@ -71,7 +71,7 @@ function createModal(movie, genres) {
         </tr>
         <tr>
           <td class="modal-movie-card__table-refs">Genre</td>
-          <td class="modal-movie-card__table-value">${genres}</td>
+          <td class="modal-movie-card__table-value">${genre}</td>
         </tr>
       </table>
       <p class="modal-movie-card__about">About</p>
