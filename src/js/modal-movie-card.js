@@ -1,14 +1,12 @@
 const API_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = '70a1ccf907025a1a646b674d3a53bd64';
-
+//
 const openModal = document.querySelector('.gallery__list');
 const closeModalBtn = document.querySelector('[data-modal-close]');
 const backdrop = document.querySelector('.modal-movie-card__js-backdrop');
 const modalCard = document.querySelector('.modal-movie-card');
 //
-
 let id;
-
 //Берем id с карточки по которой кликнули
 function openCardMovie(e) {
   document.body.classList.add('show-modal');
@@ -23,6 +21,7 @@ async function modalCreateMark() {
   await fetch(url)
     .then(response => response.json())
     .then(movie => {
+      // Жанры
       let genre = '';
       let genres = movie.genres.map(({ name }) => {
         genre += name;
@@ -115,9 +114,9 @@ function onEscKeyPress(e) {
     closeCardMovie();
   }
 }
-
+// 
 openModal.addEventListener('click', openCardMovie);
 closeModalBtn.addEventListener('click', closeCardMovie);
 backdrop.addEventListener('click', backdropClickClose);
-
+//
 export { openCardMovie };
