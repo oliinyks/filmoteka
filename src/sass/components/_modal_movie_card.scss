@@ -6,17 +6,17 @@ body.show-modal .modal-movie-card__backdrop {
 body.show-modal .modal-movie-card {
   transform: scale(1);
 }
-// .bg-scrolling-element-when-modal-open {
-//   touch-action: none;
-//   -webkit-overflow-scrolling: none;
-//   overflow: hidden;
-//   overscroll-behavior: none;
-// }
+.bg-scrolling-element-when-modal-open {
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
 .modal-movie-card__container {
   position: relative;
-  margin-top: 128px;
+  margin-top: 20rem;
   @include for-tablet-up {
-    margin-top: 0;
+    margin-top: 0rem;
   }
 }
 .modal-movie-card__backdrop {
@@ -36,10 +36,9 @@ body.show-modal .modal-movie-card {
   background: rgba(0, 0, 0, 0.2);
   transition-duration: 150ms;
   transition-property: all;
-  @include for-tablet-up {
-  }
-  @include for-desktop-up {
-  }
+  overscroll-behavior: none;
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
 }
 .modal-movie-card {
   font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -80,8 +79,8 @@ body.show-modal .modal-movie-card {
   cursor: pointer;
   background-color: $text-white-color;
   @include for-tablet-up {
-    top: 0rem;
-    right: 0rem;
+    top: 1px;
+    right: 1px;
   }
 }
 .modal-movie-card__icon-exit {
@@ -138,7 +137,10 @@ body.show-modal .modal-movie-card {
   font-weight: 500;
   font-size: 12px;
   line-height: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 26px;
+  @include for-tablet-up {
+    margin-bottom: 20px;
+  }
 }
 .modal-movie-card__button-wrapper {
   display: flex;
@@ -148,8 +150,6 @@ body.show-modal .modal-movie-card {
     & > :first-child {
       margin-right: 15px;
     }
-  }
-  @include for-tablet-up {
   }
   @media screen and (min-width: 1024px) {
     margin-left: 8px;
@@ -161,6 +161,7 @@ body.show-modal .modal-movie-card {
   width: 240px;
   height: 357px;
   overflow: hidden;
+  border-radius: 1%;
   @include for-tablet-up {
     width: 264px;
     height: 374px;
@@ -202,39 +203,13 @@ body.show-modal .modal-movie-card {
 }
 
 .modal-movie-card__button {
-  display: block;
-  cursor: pointer;
-  min-width: 112px;
   height: 44px;
-  padding: 14px 0 12px 0;
-  border: 1px solid $title-text-color;
-  box-sizing: border-box;
-  border-radius: 5px;
-  outline: none;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
-  color: $title-text-color;
-  background-color: $text-white-color;
-  text-transform: uppercase;
-  text-align: center;
-  transition: all var(--duration) var(--timing-function);
+  display: flex;
+  justify-content: space-between;
   @include for-tablet-up {
-    min-width: 125px;
-  }
-  @include for-desktop-up {
-    min-width: 136px;
+    justify-content: flex-start;
   }
 }
-
-.modal-movie-card__button:hover,
-.modal-movie-card__button:focus-visible,
-.modal-movie-card__button:active {
-  box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6) inset;
-  background-color: $span-bg-color;
-  color: $text-white-color;
-}
-
 .modal-movie-card__item-desc--orange {
   background: $span-bg-color;
   border-radius: 5px;
