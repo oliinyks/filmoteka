@@ -32,7 +32,7 @@ const testQueue = [
 
 const btnWatch = document.querySelector(".button-watched") 
 const btnQueue =document.querySelector (".button-queue") 
-const gallery = document.querySelector('.library-list')
+const galLibrary = document.querySelector(".library-list")
 
 
 localStorage.setItem('watchRes', JSON.stringify(testWatch));
@@ -49,7 +49,7 @@ console.log(dataQ)
 
 
 function renderLocalStorage(data) {
-  gallery.innerHTML = '';
+  // galLibrary.innerHTML = '';
     const markup = data
       .map(
         ({ poster_path, title, id, genre_ids, release_date, vote_average }) => {
@@ -79,14 +79,14 @@ function renderLocalStorage(data) {
       }
     )
     .join('');
-  gallery.insertAdjacentHTML('beforeend', markup);
+  // galLibrary.insertAdjacentHTML('beforeend', markup);
 }
 
 
 
 
 
-const qMarcup = renderLocalStorage(dataQ)
-btnQueue.addEventListener('submit', qMarcup)
-const wMarcup = renderLocalStorage(dataW)
-btnWatch.addEventListener('submit', wMarcup)
+// const qMarcup = renderLocalStorage(dataQ)
+// btnQueue.addEventListener('submit', qMarcup)
+// const wMarcup = renderLocalStorage(dataW)
+// btnWatch.addEventListener('submit', wMarcup)
