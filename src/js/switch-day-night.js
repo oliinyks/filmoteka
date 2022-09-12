@@ -1,5 +1,7 @@
 const checboxEl = document.querySelector('#toggle');
-const paginationBtnEl = document.querySelector('.tui-page-btn')
+// const container = document.getElementById('tui-pagination-container');
+// const container = document.querySelectorAll('a');
+const paginationEl = document.querySelector('.tui-pagination');
 const FORM_KEY = 'day-night';
 
 savedTheme();
@@ -9,9 +11,9 @@ function savedTheme (){
 	if(!savedTheme){
 		checboxEl.checked = !savedTheme;
 		document.body.classList.add('dark-theme');
-		paginationBtnEl.body.classList.add('dark-theme');
-		// footer.classList.add('dark-theme');
-		// modal.classList.add('dark-theme');
+
+		paginationEl.classList.add('dark-theme');
+
 	}
 	 }
 
@@ -29,13 +31,14 @@ function onChecboxClick(e) {
 function darkTheme (){
 	localStorage.setItem(FORM_KEY, false);
 	document.body.classList.add('dark-theme');
-	paginationBtnEl.body.classList.add('dark-theme');
-	// footer.classList.add('dark-theme');
+
+	paginationEl.classList.add('dark-theme');
+	
 }
 function lightTheme(){
 	localStorage.setItem(FORM_KEY, true)
 	document.body.classList.remove('dark-theme');
-	paginationBtnEl.body.classList.remove('dark-theme');
-	// footer.classList.remove('dark-theme');
+
+	paginationEl.classList.remove('dark-theme');
 }
 
