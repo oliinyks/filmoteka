@@ -1,4 +1,6 @@
 import './js/fetchFilms';
+import './js/partials/modal-auth';
+import './js/auth';
 import './js/renderTrends';
 import './js/buildTrends';
 import './js/renderLocalStorage';
