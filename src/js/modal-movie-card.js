@@ -58,14 +58,22 @@ function createModal(movie) {
       <p class="modal-card__description">
        ${movie.overview}
       </p>
-      <div class="modal-card__button-wrapper">
-        <button class="modal-card__button add-to-watched" data-modal-watched>
-          add to Watched
-        </button>
-        <button class="modal-card__button add-to-queue" data-modal-queue>
-          add to queue
-        </button>
-      </div>
+      <div class="button__thumb">
+  <div class="change-button__wrapper">
+    <label>
+      <input type="checkbox" name="watched" class="change-button__checkbox js-watched">
+      <span type="button" class="change-button__button-on removeAddWatch">Remove from watched</span>
+      <span type="button" class="change-button__button-off addWatch">Add to watched</span>
+    </label>
+  </div>
+  <div class="change-button__wrapper">
+    <label>
+      <input type="checkbox" name="queue" class="change-button__checkbox js-queue">
+      <span type="button" class="change-button__button-on removeQueue">Remove from queue</span>
+      <span type="button" class="change-button__button-off addQueue">Add to queue</span>
+    </label>
+  </div>
+</div>
     </div>
     `;
 }
@@ -88,3 +96,4 @@ function onEscKeyPress(e) {
 openModal.addEventListener('click', openCardMovie);
 closeModalBtn.addEventListener('click', closeCardMovie);
 backdrop.addEventListener('click', backdropClickClose);
+export { openCardMovie };
