@@ -100,4 +100,4 @@ function onEscKeyPress(e) {
 openModal.addEventListener('click', openCardMovie);
 closeModalBtn.addEventListener('click', closeCardMovie);
 backdrop.addEventListener('click', backdropClickClose);
-export { openCardMovie };
+export { openCardMovie, id };
