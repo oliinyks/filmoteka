@@ -1,4 +1,4 @@
-import { modalCreateMarkup } from './modal-movie-card';
+import { modalCreateMark } from './modal-movie-card';
 function createModal(movie, genreMovieCard) {
   modalCard.innerHTML = ``;
   return `
@@ -58,7 +58,15 @@ function createModal(movie, genreMovieCard) {
 <span type="button" class="change-button__button-on removeQueue">Remove from queue</span>
 <span type="button" class="change-button__button-off addQueue">Add to queue</span>
 </label>
+    <button type="button" class="modal-movie-card__close-btn" data-modal-close>
+      <span class="modal-movie-card__icon">
+        <svg class="modal-movie-card__icon-exit">
+          <use href="./images/sprite.svg#icon-exit"></use>
+        </svg>
+      </span>
+    </button>
 </div>
+<div></div>
     </div>
     `;
 }

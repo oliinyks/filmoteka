@@ -12,7 +12,6 @@ function openCardMovie(e) {
     e.target.nodeName === 'P' ||
     e.target.nodeName === 'H3'
   ) {
-
     id = Number(e.target.getAttribute('data-id'));
     enableLoader();
     document.body.classList.add('show-modal');
@@ -22,4 +21,5 @@ function openCardMovie(e) {
   }
 }
 openModal.addEventListener('click', openCardMovie);
+
 export { id, openCardMovie };
