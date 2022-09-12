@@ -1,11 +1,11 @@
 const refs = {
-    noElement: document.querySelector('.no-element')
+    noElementFound: document.querySelector('.no-element-found')
 }
 
-export function EnableNoElementsPlug() {
-    refs.noElement.classList.remove('.is-hidden');
+export function showNoElementsNotice() {
+    refs.noElementFound.classList.remove('.is-hidden');
 }
 
-export function EnableNoElementsPlug() {
-    refs.noElement.classList.add('.is-hidden');
+export function hideNoElementsNotice() {
+    refs.noElementFound.classList.add('.is-hidden');
 }

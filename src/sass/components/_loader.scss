@@ -16,8 +16,8 @@
     height: 100px;
     position: absolute;
     left: 50%;
-    top: 70%;
-    transform: translate(-50%, -50%);    
+    top: 330px;
+    transform: translate(-50%, 0);
 }
 
 .circle {
@@ -51,7 +51,7 @@
 }
 
 .circle:nth-child(2) {
-    left: 48%;
+    left: 49%;
     animation-delay: .2s;    
 }
 
@@ -92,7 +92,7 @@
 }
 
 .shadow:nth-child(5) {
-    left: 48%;
+    left: 49%;
     animation-delay: .2s
 }
 
@@ -102,37 +102,12 @@
     animation-delay: .3s;
 }
 
-.loader-text {
-    margin-top: 20px;
-    position: absolute;
-    top: 20px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 25px;    
-    letter-spacing: 8px;
-    color: getColor('hover');
-    left: 50%;
-    transform: translate(-50%, 50%);
-}
-
-.gif-wrap {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -175%);
-    width: 25%;    
-}
-
-.tenor-gif-embed {
-    transform: rotateY(180deg)
-}
-
 @include for-tablet-up {
-    .loader-wrapper {
-            width: 500px;
-            height: 100px;
-            top: 80%;            
-        }
 
+        .loader-wrapper {
+            width: 600px;            
+        }
+    
         .circle {
             width: 15px;
             height: 15px;            
@@ -160,18 +135,5 @@
         .shadow {
             width: 15px;
             height: 5px;            
-        }
-    
-        .loader-text {
-            margin-top: 30px;            
-            font-size: 35px;
-            letter-spacing: 10px;            
-            left: 51%;            
-        }
-    
-        .gif-wrap {
-            position: absolute;            
-            transform: translate(-50%, -140%);
-            width: 30%;
         }
 }
