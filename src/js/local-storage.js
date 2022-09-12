@@ -1,4 +1,4 @@
-import { openCardMovie } from './modal-movie-card';
+import { openCardMovie, id } from './modal-movie-card';
 const removeQueue = document.querySelector('.removeQueue');
 const addQueue = document.querySelector('.addQueue');
 const addWatch = document.querySelector('.addWatch');
@@ -11,7 +11,6 @@ const keyQueue = 'queueResult';
 
 // Проверка
 // Если в localStorage есть данные и они равны id, то кнопки в модалке не ресетятся
-let id ;
 const watchedResults = getFilmStorage(keyWatch);
 const checkWatchedStorage = watchedResults.some((item) => item === id);
 const queueResults = getFilmStorage(keyQueue);
