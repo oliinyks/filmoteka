@@ -10,7 +10,6 @@ const modalCard = document.querySelector('.modal-movie-card');
 let id;
 //Берем id с карточки по которой кликнули
 function openCardMovie(e) {
-  console.log(e.currentTarget);
   document.body.classList.add('show-modal');
   window.addEventListener('keydown', onEscKeyPress);
   id = Number(e.target.getAttribute('data-id'));
