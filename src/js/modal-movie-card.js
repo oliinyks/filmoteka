@@ -2,7 +2,7 @@ import { dataLocalStorage } from './local-storage';
 const API_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = '70a1ccf907025a1a646b674d3a53bd64';
 //
-const openModal = document.querySelector('.gallery__list');
+const openModal = document.querySelector('ul.gallery__list');
 const closeModalBtn = document.querySelector('[data-modal-close]');
 const backdrop = document.querySelector('.modal-movie-card__js-backdrop');
 const modalCard = document.querySelector('.modal-movie-card');
@@ -10,11 +10,19 @@ const modalCard = document.querySelector('.modal-movie-card');
 let id;
 //Берем id с карточки по которой кликнули
 function openCardMovie(e) {
-  document.body.classList.add('show-modal');
-  window.addEventListener('keydown', onEscKeyPress);
-  id = Number(e.target.getAttribute('data-id'));
-  document.body.style.overflow = 'hidden';
-  modalCreateMark();
+  console.log(e.target.nodeName);
+  if (
+    e.target.nodeName === 'IMG' ||
+    e.target.nodeName === 'DIV' ||
+    e.target.nodeName === 'P' ||
+    e.target.nodeName === 'H3'
+  ) {
+    id = Number(e.target.getAttribute('data-id'));
+    document.body.classList.add('show-modal');
+    window.addEventListener('keydown', onEscKeyPress);
+    document.body.style.overflow = 'hidden';
+    modalCreateMark();
+  }
 }
 
 //Запрос по id карточки на которую кликнули и рендерим разметку
