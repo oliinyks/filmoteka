@@ -36,12 +36,12 @@
 	.movie-card__title, 
 	.modal-movie-card__description, 
 	.modal-movie-card__film-desсriptoin,
-	.modal-movie-card,
 	.modal-movie-card__table-value,
 	.modal-movie-card__film-title{
 	color: var(--white);
 	}
-	.modal-movie-card{
+	.modal-movie-card,
+	.modal-movie-card__close-btn{
 		background-color: var(--indigo);
 	}
 	.modal-movie-card__icon-exit{
