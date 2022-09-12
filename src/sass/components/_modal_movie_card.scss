@@ -1,23 +1,29 @@
-body.show-modal .backdrop {
+body.show-modal .modal-movie-card__backdrop {
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
 }
-body.show-modal .modal-card {
+body.show-modal .modal-movie-card {
   transform: scale(1);
 }
-.bg-scrolling-element-when-modal-open {
-  touch-action: none;
-  -webkit-overflow-scrolling: none;
-  overflow: hidden;
-  overscroll-behavior: none;
+// .bg-scrolling-element-when-modal-open {
+//   touch-action: none;
+//   -webkit-overflow-scrolling: none;
+//   overflow: hidden;
+//   overscroll-behavior: none;
+// }
+.modal-movie-card__container {
+  position: relative;
+  margin-top: 128px;
+  @include for-tablet-up {
+    margin-top: 0;
+  }
 }
-.backdrop {
+.modal-movie-card__backdrop {
   z-index: 1001;
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,34 +34,30 @@ body.show-modal .modal-card {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
-  transition-duration: 250ms;
+  transition-duration: 150ms;
   transition-property: all;
   @include for-tablet-up {
   }
   @include for-desktop-up {
   }
 }
-.modal-card {
+.modal-movie-card {
   font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   width: 280px;
   height: 100%;
   overflow: scroll;
   padding: 48px 20px 40px;
-  transform: translate(-50%);
   background-color: $text-white-color;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   @include for-tablet-up {
     width: 704px;
     height: 552px;
     padding: 40px 72px 40px 36px;
     display: flex;
     justify-content: space-between;
-    transform: translate(-50%, -50%);
   }
   @include for-desktop-up {
     width: 806px;
@@ -63,55 +65,54 @@ body.show-modal .modal-card {
     padding: 40px 12px;
     display: flex;
     justify-content: space-between;
-    transform: translate(-50%, -50%);
   }
 }
 // СВГ закрытие модального окна
-.modal-card__close-btn {
+.modal-movie-card__close-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   top: 5px;
-  right: 1px;
+  right: 0rem;
   padding: 20px;
   position: absolute;
   border: none;
-  background: $text-white-color;
   cursor: pointer;
+  background-color: $text-white-color;
   @include for-tablet-up {
-    top: 5px;
-    right: 2px;
+    top: 0rem;
+    right: 0rem;
   }
 }
-.modal-card__icon-exit {
+.modal-movie-card__icon-exit {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
+  z-index: 1004;
   width: 24px;
   height: 24px;
-  fill: currentColor;
 }
 //
-.modal-card__film-title {
+.modal-movie-card__film-title {
   color: $title-text-color;
   font-weight: 500;
   font-size: 20px;
   line-height: 23px;
   margin-bottom: 15px;
 }
-.modal-card__table {
+.modal-movie-card__table {
   border-collapse: collapse;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
   margin-bottom: 15px;
 }
-.modal-card__table-refs {
+.modal-movie-card__table-refs {
   padding-top: 5px;
   padding-bottom: 5px;
   color: getColor('modal-text-color');
 }
-.modal-card__table-value {
+.modal-movie-card__table-value {
   color: $title-text-color;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -124,7 +125,7 @@ body.show-modal .modal-card {
   }
 }
 
-.modal-card__about {
+.modal-movie-card__about {
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
@@ -132,14 +133,14 @@ body.show-modal .modal-card {
   text-transform: uppercase;
   margin-bottom: 8px;
 }
-.modal-card__description {
+.modal-movie-card__description {
   color: $title-text-color;
   font-weight: 500;
   font-size: 12px;
   line-height: 20px;
   margin-bottom: 20px;
 }
-.modal-card__button-wrapper {
+.modal-movie-card__button-wrapper {
   display: flex;
   justify-content: space-between;
   @include for-tablet-up {
@@ -155,7 +156,7 @@ body.show-modal .modal-card {
   }
 }
 
-.modal-card__img-wrapper {
+.modal-movie-card__img-wrapper {
   margin-bottom: 30px;
   width: 240px;
   height: 357px;
@@ -172,7 +173,7 @@ body.show-modal .modal-card {
   }
 }
 
-.modal-card__img-wrapper > img {
+.modal-movie-card__img-wrapper > img {
   display: block;
   width: 240px;
   height: 356px;
@@ -189,7 +190,7 @@ body.show-modal .modal-card {
   }
 }
 
-.modal-card__film-desсriptoin {
+.modal-movie-card__film-desсriptoin {
   width: 240px;
   @include for-tablet-up {
     width: 264px;
@@ -200,7 +201,7 @@ body.show-modal .modal-card {
   }
 }
 
-.modal-card__button {
+.modal-movie-card__button {
   display: block;
   cursor: pointer;
   min-width: 112px;
@@ -226,15 +227,15 @@ body.show-modal .modal-card {
   }
 }
 
-.modal-card__button:hover,
-.modal-card__button:focus-visible,
-.modal-card__button:active {
+.modal-movie-card__button:hover,
+.modal-movie-card__button:focus-visible,
+.modal-movie-card__button:active {
   box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6) inset;
   background-color: $span-bg-color;
   color: $text-white-color;
 }
 
-.modal__item-desc--orange {
+.modal-movie-card__item-desc--orange {
   background: $span-bg-color;
   border-radius: 5px;
   font-size: 12px;
@@ -242,7 +243,7 @@ body.show-modal .modal-card {
   color: $text-white-color;
   padding: 1px 9px;
 }
-.modal__item-desc--grey {
+.modal-movie-card__item-desc--grey {
   font-size: 12px;
   line-height: 14px;
   color: $title-text-color;
