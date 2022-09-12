@@ -84,7 +84,6 @@ function renderLocalStorage(data) {
 }
 
 
-
 btnQueue.addEventListener('click', renderLocalStorage(dataQ))
 btnWatch.addEventListener('click', renderLocalStorage(dataW))
 

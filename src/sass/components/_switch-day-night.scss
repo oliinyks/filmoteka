@@ -178,3 +178,37 @@
 	border-radius: 50%;
 	opacity: 0;
 }
+
+@keyframes switch {
+	0% {
+		 left: 4px;
+	}
+
+	60% {
+		 left: 4px;
+		 width: 15px;
+	}
+
+	100% {
+		 left: 35px;
+		 width: 20px;
+	}
+}
+
+@keyframes reverse {
+	0% {
+		left: 35px;
+		width: 20px;
+	}
+
+	60% {
+		left: 4px;
+		width: 15px;
+	}
+
+	100% {
+		 left: 4px;
+	}
+}
+
+
