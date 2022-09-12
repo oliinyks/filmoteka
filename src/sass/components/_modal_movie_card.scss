@@ -6,12 +6,6 @@ body.show-modal .modal-movie-card__backdrop {
 body.show-modal .modal-movie-card {
   transform: scale(1);
 }
-.bg-scrolling-element-when-modal-open {
-  touch-action: none;
-  -webkit-overflow-scrolling: none;
-  overflow: hidden;
-  overscroll-behavior: none;
-}
 .modal-movie-card__container {
   position: relative;
   margin-top: 20rem;
@@ -36,16 +30,15 @@ body.show-modal .modal-movie-card {
   background: rgba(0, 0, 0, 0.2);
   transition-duration: 150ms;
   transition-property: all;
-  overscroll-behavior: none;
-  touch-action: none;
-  -webkit-overflow-scrolling: none;
+  @include for-tablet-up {
+    overflow: hidden;
+  }
 }
 .modal-movie-card {
   font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   width: 280px;
   height: 100%;
-  overflow: scroll;
   padding: 48px 20px 40px;
   background-color: $text-white-color;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -56,14 +49,14 @@ body.show-modal .modal-movie-card {
     height: 552px;
     padding: 40px 72px 40px 36px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   @include for-desktop-up {
     width: 806px;
     height: 558px;
     padding: 40px 12px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
 // СВГ закрытие модального окна
@@ -151,24 +144,24 @@ body.show-modal .modal-movie-card {
       margin-right: 15px;
     }
   }
-  @media screen and (min-width: 1024px) {
+  @include for-desktop-up {
     margin-left: 8px;
   }
 }
 
 .modal-movie-card__img-wrapper {
   margin-bottom: 30px;
-  width: 240px;
+  width: 238px;
   height: 357px;
   overflow: hidden;
   border-radius: 1%;
   @include for-tablet-up {
-    width: 264px;
+    width: 250px;
     height: 374px;
     margin-bottom: 0px;
   }
   @include for-desktop-up {
-    width: 375px;
+    width: 319px;
     height: 478px;
     margin-bottom: 0px;
   }
@@ -176,25 +169,25 @@ body.show-modal .modal-movie-card {
 
 .modal-movie-card__img-wrapper > img {
   display: block;
-  width: 240px;
-  height: 356px;
-  object-fit: fill;
-  @include for-tablet-up {
-    width: 264px;
-    height: 374px;
-    object-fit: fill;
-  }
-  @include for-desktop-up {
-    width: 370px;
-    height: 478px;
-    object-fit: fill;
-  }
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  // @include for-tablet-up {
+
+  //   object-fit: contain;
+  // }
+  // @include for-desktop-up {
+  //   width: 370px;
+  //   height: 478px;
+  //   object-fit: contain;
+  // }
 }
 
 .modal-movie-card__film-desсriptoin {
   width: 240px;
   @include for-tablet-up {
     width: 264px;
+    margin-left: 60px;
   }
   @include for-desktop-up {
     width: 396px;
