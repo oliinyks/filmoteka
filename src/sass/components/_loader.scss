@@ -52,11 +52,7 @@
 
 .circle:nth-child(2) {
     left: 49%;
-<<<<<<< Updated upstream
-    animation-delay: .2s;    
-=======
     animation-delay: .2s;
->>>>>>> Stashed changes
 }
 
 .circle:nth-child(3) {
@@ -107,41 +103,6 @@
 }
 
 @include for-tablet-up {
-<<<<<<< Updated upstream
-
-        .loader-wrapper {
-            width: 600px;            
-        }
-    
-        .circle {
-            width: 15px;
-            height: 15px;            
-        }
-    
-        @keyframes circle {
-            0% {
-                top: 30%;                
-                height: 15px;
-                border-radius: 100px 100px 50px 50px;
-                transform: scaleX(1.4);
-            }
-    
-            40% {
-                height: 15px;
-                border-radius: 50%;
-                transform: scaleX(1);
-            }
-    
-            100% {
-                top: 0%;
-            }
-        }
-
-        .shadow {
-            width: 15px;
-            height: 5px;            
-        }
-=======
 
     .loader-wrapper {
         width: 600px;
@@ -175,5 +136,4 @@
         width: 15px;
         height: 5px;
     }
->>>>>>> Stashed changes
 }
