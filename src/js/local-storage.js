@@ -7,11 +7,13 @@ const dataLocalStorage = (id) => {
   const removeWatch = document.querySelector('.removeAddWatch');
   const inputWatch = document.querySelector('.js-watched');
   const inputQueue = document.querySelector('.js-queue');
-  const sasha = document.querySelector('.lazyload');
-  
+
   
   const keyWatch = 'watchResults';
   const keyQueue = 'queueResult';
+
+  const getFilmStorage = (key) => JSON.parse(localStorage.getItem(key));
+
 
   const saveToStorage = (key, id) => {
     let storageResult = getFilmStorage(key);
@@ -28,7 +30,11 @@ const dataLocalStorage = (id) => {
     }
   };
 
-  const getFilmStorage = key => JSON.parse(localStorage.getItem(key));
+  const removeStorage = (key, id) => {
+    const arrayStorage = JSON.parse(localStorage.getItem(key));
+    const filterId = arrayStorage.filter(item => item !== id);
+    localStorage.setItem(key, JSON.stringify(filterId));
+   };
 
   // Проверка
   // Если в localStorage есть данные и они равны id, то кнопки в модалке не ресетятся
@@ -44,13 +50,6 @@ const dataLocalStorage = (id) => {
     inputQueue.setAttribute('checked', '');
   }
 
-
-    const removeStorage = (key, id) => {
-    const arrayStorage = JSON.parse(localStorage.getItem(key));
-    const filterId = arrayStorage.filter(item => item !== id);
-    localStorage.setItem(key, JSON.stringify(filterId));
-
-  };
     addWatch.addEventListener('click', () => saveToStorage(keyWatch, id));
     removeWatch.addEventListener('click', () => removeStorage(keyWatch, id));
   
