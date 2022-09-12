@@ -24,7 +24,7 @@ async function modalCreateMark() {
       // Жанры
       let genre = '';
       let genres = movie.genres.map(({ name }) => {
-        genre += name;
+        genre = name;
       });
       document
         .querySelector('.modal-movie-card')
@@ -114,7 +114,7 @@ function onEscKeyPress(e) {
     closeCardMovie();
   }
 }
-// 
+//
 openModal.addEventListener('click', openCardMovie);
 closeModalBtn.addEventListener('click', closeCardMovie);
 backdrop.addEventListener('click', backdropClickClose);
