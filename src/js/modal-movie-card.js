@@ -5,12 +5,12 @@ const closeModalBtn = document.querySelector('[data-modal-close]');
 const backdrop = document.querySelector('.modal-movie-card__js-backdrop');
 const modalCard = document.querySelector('.modal-movie-card');
 //
-let id = 550;
+let id;
 //Берем id с карточки по которой кликнули
 function openCardMovie(e) {
   document.body.classList.add('show-modal');
   window.addEventListener('keydown', onEscKeyPress);
-  // id = Number(e.target.getAttribute('data-id'));
+  id = Number(e.target.getAttribute('data-id'));
   modalCreateMark();
 }
 //Запрос по id карточки на которую кликнули и рендерим разметку
@@ -60,14 +60,22 @@ function createModal(movie) {
       <p class="modal-movie-card__description">
        ${movie.overview}
       </p>
-      <div class="modal-movie-card__button-wrapper">
-        <button class="modal-movie-card__button add-to-watched" data-modal-watched>
-          add to Watched
-        </button>
-        <button class="modal-movie-card__button add-to-queue" data-modal-queue>
-          add to queue
-        </button>
-      </div>
+
+<div class="modal-movie-card__button thumb">
+<div class="change-button__wrapper">
+<label>
+<input type="checkbox" name="watched" class="change-button__checkbox js-watched">
+<span type="button" class="change-button__button-on removeAddWatch">Remove from watched</span>
+<span type="button" class="change-button__button-off addwatch">Add to watched</span>
+</label>
+</div>
+<div class="change-button__wrapper">
+<label>
+<input type="checkbox" name="queue" class="change-button__checkbox js-queue">
+<span type="button" class="change-button__button-on removeQueue">Remove from queue</span>
+<span type="button" class="change-button__button-off addQueue">Add to queue</span>
+</label>
+</div>
     </div>
     `;
 }

@@ -6,7 +6,7 @@
 	--yellow-background: #fefbbe;
 	--yellow-border: #f5ea71a2;
 	/** dark side **/
-	--indigo:rgba(24, 32, 37, 0.9);
+	--indigo:rgb(38, 47, 52);
 	--indigo-border: rgba(222, 222, 222, 0.8);
 	--gray: #e8e8ea;
 	/** general **/
@@ -17,7 +17,11 @@
 .switcher{
 	display: flex;
 	justify-content: flex-end;
-	margin-top: 10px;
+	margin-top: 20px;
+	margin-right: 20px;
+	@include for-desktop-up{
+		margin-top: 10px;
+	}
 }
 
 .toggle--checkbox {
@@ -34,8 +38,19 @@
 	background-color: var(--indigo);
 	color: var(--white);
 	
-	.movie-card__title{
+	.movie-card__title, 
+	.modal-movie-card__description, 
+	.modal-movie-card__film-desсriptoin,
+	.modal-movie-card,
+	.modal-movie-card__table-value,
+	.modal-movie-card__film-title{
 	color: var(--white);
+	}
+	.modal-movie-card{
+		background-color: var(--indigo);
+	}
+	.modal-movie-card__icon-exit{
+		fill: var(--white);
 	}
 	// .tui-pagination{
 	// 	color: var(--white);
@@ -163,37 +178,3 @@
 	border-radius: 50%;
 	opacity: 0;
 }
-
-@keyframes switch {
-	0% {
-		 left: 4px;
-	}
-
-	60% {
-		 left: 4px;
-		 width: 15px;
-	}
-
-	100% {
-		 left: 35px;
-		 width: 20px;
-	}
-}
-
-@keyframes reverse {
-	0% {
-		left: 35px;
-		width: 20px;
-	}
-
-	60% {
-		left: 4px;
-		width: 15px;
-	}
-
-	100% {
-		 left: 4px;
-	}
-}
-
-

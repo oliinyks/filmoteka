@@ -2,6 +2,7 @@
 
 @import './utils/breakpoints';
 @import './utils/variables';
+@import './utils/animation';
 
 @import './components/container';
 @import './components/common';
@@ -17,3 +18,4 @@
 @import './components/modal_movie_card';
 @import './components/no-elements-plug';
 @import './components/modal_movie_card';
+@import './components/change_btn_modal';
