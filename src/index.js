@@ -6,3 +6,4 @@ import './js/modal-movie-card';
 import './js/switch-day-night';
 import './js/arrow_top';
 import './js/local-storage';
+import './js/modal-team';
