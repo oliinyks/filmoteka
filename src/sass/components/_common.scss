@@ -28,6 +28,10 @@ html, body{
 	color: getColor('primary-text');
 }
 
+main{
+  min-height: 100vw;
+}
+
 .list {
   list-style: none;
   text-decoration: none;
