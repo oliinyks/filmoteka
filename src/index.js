@@ -3,7 +3,6 @@ import './js/partials/modal-auth';
 import './js/auth';
 import './js/renderTrends';
 import './js/buildTrends';
-import './js/renderLocalStorage';
 import './js/switch-day-night';
 import './js/arrow_top';
 import './js/local-storage';
