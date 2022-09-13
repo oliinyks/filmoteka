@@ -9,3 +9,5 @@ import './js/local-storage';
 import './js/loader';
 import './js/noElementsPlug';
 import './js/key-url';
+import './js/buildSearchedMovies'
+import './js/fetchSearchMovies'

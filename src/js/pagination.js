@@ -29,4 +29,8 @@ const paganation = new Pagination(
   options
 );
 
-export { paganation };
+const paginationSearch = new Pagination(
+  document.getElementById('pagination'),
+  options
+);
+export { paganation, paginationSearch };

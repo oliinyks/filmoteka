@@ -1,7 +1,7 @@
 import { gallery } from './data';
 import { getGenres, getG } from './getGenres';
 
-function renderTrandFilms(data) {
+function renderMovies(data) {
     gallery.innerHTML = '';
     const markup = data
       .map(
@@ -35,7 +35,7 @@ function renderTrandFilms(data) {
   gallery.insertAdjacentHTML('beforeend', markup);
 }
 
-export { renderTrandFilms };
+export { renderMovies };
 
 
 
