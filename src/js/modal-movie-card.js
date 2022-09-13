@@ -1,48 +1,28 @@
 import { dataLocalStorage } from './local-storage';
 import { API_URL, API_KEY } from './key-url';
+import { id, openCardMovie } from './modal-movie-card-open';
+import { disableLoader } from './loader';
 //
-const openModal = document.querySelector('ul.gallery__list');
-const closeModalBtn = document.querySelector('[data-modal-close]');
-const backdrop = document.querySelector('.modal-movie-card__js-backdrop');
 const modalCard = document.querySelector('.modal-movie-card');
 //
-let id;
-//Берем id с карточки по которой кликнули
-function openCardMovie(e) {
-  console.log(e.target.nodeName);
-  if (
-    e.target.nodeName === 'IMG' ||
-    e.target.nodeName === 'DIV' ||
-    e.target.nodeName === 'P' ||
-    e.target.nodeName === 'H3'
-  ) {
-    id = Number(e.target.getAttribute('data-id'));
-    document.body.classList.add('show-modal');
-    window.addEventListener('keydown', onEscKeyPress);
-    document.body.style.overflow = 'hidden';
-    modalCreateMark();
-  }
-}
-
-//Запрос по id карточки на которую кликнули и рендерим разметку
-async function modalCreateMark() {
+async function modalCreateMarkup() {
   let url = `${API_URL}movie/${id}?api_key=${API_KEY}`;
   await fetch(url)
     .then(response => response.json())
     .then(movie => {
-      // Жанры
       let genreMovieCard = [];
       let genresMovieCard = movie.genres.map(({ name }) => {
         genreMovieCard.push(name);
       });
-      document
-        .querySelector('.modal-movie-card')
-        .insertAdjacentHTML('afterbegin', createModal(movie, genreMovieCard));
+      modalCard.insertAdjacentHTML(
+        'beforeend',
+        createModal(movie, genreMovieCard)
+      );
       dataLocalStorage(id);
     })
     .catch(error => console.log(error));
+  disableLoader();
 }
-// Разметка
 function createModal(movie, genreMovieCard) {
   modalCard.innerHTML = ``;
   return `
@@ -106,25 +86,6 @@ function createModal(movie, genreMovieCard) {
     </div>
     `;
 }
-// При выходе забираем класс.
-function closeCardMovie() {
-  document.body.classList.remove('show-modal');
-  window.removeEventListener('keydown', onEscKeyPress);
-  document.body.style.overflow = '';
-}
-// Выход по backdrop
-function backdropClickClose(e) {
-  if (e.currentTarget === e.target) {
-    closeCardMovie();
-  }
-}
-// Выход по ESC
-function onEscKeyPress(e) {
-  if (e.code === 'Escape') {
-    closeCardMovie();
-  }
-}
-openModal.addEventListener('click', openCardMovie);
-closeModalBtn.addEventListener('click', closeCardMovie);
-backdrop.addEventListener('click', backdropClickClose);
+
 export { openCardMovie };
+export { modalCreateMarkup };
