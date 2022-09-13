@@ -14,3 +14,5 @@ import './js/modal-movie-card-close';
 import './js/modal-movie-card';
 import './js/modal-movie-card-open';
 import './js/modal-team'; 
+import './js/buildSearchedMovies'
+import './js/fetchSearchMovies'
