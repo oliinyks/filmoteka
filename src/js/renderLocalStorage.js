@@ -1,4 +1,16 @@
+
+
 import { getGenres, getG } from './getGenres';
+import { paganation } from './pagination';
+import { renderTrandFilms } from './renderTrends';
+import { fetchTrendFilms } from './fetchFilms';
+
+
+
+
+
+//=======пагинация
+
 
 //============================тест
 const testWatch = [
@@ -34,23 +46,29 @@ const btnWatch = document.querySelector(".button-watched")
 const btnQueue =document.querySelector (".button-queue") 
 const galLibrary = document.querySelector(".library-list")
 
+// btnWatch.addEventListener ("click", () => {console.log("Button was clicked");});
+// btnQueue.addEventListener ("click", () => {console.log("Q");});
 
-localStorage.setItem('watchRes', JSON.stringify(testWatch));
-localStorage.setItem('queueRes', JSON.stringify(testQueue));
 
-let dataW = localStorage.getItem('watchRes');
-let dataQ = localStorage.getItem('queueRes');
+  // ==  ключи по которым хранится все в локалСтор
+// let dataW = localStorage.getItem('watchResults');
+// let dataQ = localStorage.getItem('queueResult');
 
-dataW = JSON.parse(dataW);
-console.log(dataW)
-dataQ = JSON.parse(dataQ);
-console.log(dataQ)
+// тестим
+let dataW = localStorage.getItem('testWatch');
+let dataQ = localStorage.getItem('testQueue');
+  
+  // переменые в которых  распарсеные данные из ключей
+// dataW = JSON.parse(dataW);
+// console.log(dataW)
+// dataQ = JSON.parse(dataQ);
+// console.log(dataQ)
 
 
 
 function renderLocalStorage(data) {
-  // galLibrary.innerHTML = '';
-    const markup = data
+
+   const markup = data
       .map(
         ({ poster_path, title, id, genre_ids, release_date, vote_average }) => {
         const getNames = getGenres(genre_ids);
@@ -58,35 +76,30 @@ function renderLocalStorage(data) {
         // const rating = vote_average.toFixed(1);
         return `<li class="gallery__item movie-card" data-id=${id}>
         <a href="#" class="gallery__link movie-card__link link" data-id=${id}>
-    <div class="gallery__wrapper" data-id=${id}>
-    
-        <img
-            class="gallery__img movie-card__image"
-            src="https://www.themoviedb.org/t/p/w500${poster_path}"
-            alt="${title}"
-            loading="lazy"
-            data-id=${id}
-            onerror="this.src='https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg?tr=fo-auto,di-';"
-            >
-    </div>
-    <div class="gallery__thumb movie-card__info" data-id=${id}>
-        <h3 class="gallery__name movie-card__title" data-id=${id}>${title}</h3>
-        <p class="gallery__genres movie-card__genre" data-id=${id}>${getNames}</p>
-        <span class="gallery__year movie-card__year" data-id=${id}>${year ? year : 'n/a'}</span>
-    </div>
-    </a>
-</li>`;
+          <div class="gallery__wrapper" data-id=${id}>
+              <img
+                  class="gallery__img movie-card__image"
+                  src="https://www.themoviedb.org/t/p/w500${poster_path}"
+                  alt="${title}"
+                  loading="lazy"
+                  data-id=${id}
+                  onerror="this.src='https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg?tr=fo-auto,di-';"
+                  >
+          </div>
+          <div class="gallery__thumb movie-card__info" data-id=${id}>
+              <h3 class="gallery__name movie-card__title" data-id=${id}>${title}</h3>
+              <p class="gallery__genres movie-card__genre" data-id=${id}>${getNames}</p>
+              <span class="gallery__year movie-card__year" data-id=${id}>${year ? year : 'n/a'}</span>
+          </div>
+          </a>
+      </li>`;
       }
     )
     .join('');
-  // galLibrary.insertAdjacentHTML('beforeend', markup);
+  galLibrary.insertAdjacentHTML('beforeend', markup);
 }
 
 
 
 
 
-// const qMarcup = renderLocalStorage(dataQ)
-// btnQueue.addEventListener('submit', qMarcup)
-// const wMarcup = renderLocalStorage(dataW)
-// btnWatch.addEventListener('submit', wMarcup)
