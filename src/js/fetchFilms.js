@@ -8,12 +8,14 @@ async function fetchTrendFilms(page) {
   
   try {
     const { data } = await axios.get(`${url}?api_key=${KEY}&page=${page}`);
-    disableLoader();    
+    disableLoader();  
     return data;
   } catch (error) {
     console.error('Something wrong! Can not get full trends' + error);
   }
 }
+
+
 
 //   fetchTrendFilms(1).then(data => console.log(data))
 
