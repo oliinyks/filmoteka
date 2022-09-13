@@ -3,9 +3,9 @@ const refs = {
 }
 
 export function showNoElementsNotice() {
-    refs.noElementFound.classList.remove('.is-hidden');
+    refs.noElementFound.classList.remove('is-hidden');
 }
 
 export function hideNoElementsNotice() {
-    refs.noElementFound.classList.add('.is-hidden');
+    refs.noElementFound.classList.add('is-hidden');
 }
