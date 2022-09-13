@@ -5,17 +5,9 @@ import {
     createUserWithEmailAndPassword,
     onAuthStateChanged,
     signOut,
-    GoogleAuthProvider,
 } from "firebase/auth";
-import { Notify } from 'notiflix';
 import { refs } from './partials/refs';
-
-const optionsNotify = {
-    position: 'center-top',
-    timeout: 2000, 
-    cssAnimationStyle: 'from-top',
-    fontAwesomeIconStyle: 'shadow',
-}
+import { onSucsessSignInAlert, onAuthVerified, onUnsubscribeAlert } from '../js/partials/alerts-auth';
 
 refs.signInBtn.addEventListener('click', loginWithEmilAndPassword);
 refs.logOutBtn.addEventListener('click', logOut);
@@ -36,11 +28,14 @@ monitorAuthState();
 
 async function monitorAuthState(){
     onAuthStateChanged(auth, user=>{
-        if(user){
-            onSucsessAlert();
+        if(user.emailVerified){
+            onSucsessSignInAlert();
+        }
+        else if(user){
+            onAuthVerified();
         }
         else{
-           Notify.info('You have no account yet! Sign up firstly.', optionsNotify);
+            onUnsubscribeAlert();
         }
     });
 };
@@ -64,8 +59,4 @@ async function loginWithEmilAndPassword(){
 
 async function logOut(){
     await signOut(auth);
-};
-
-function onSucsessAlert(){
-    Notify.success(`Welcome! What's today, adventure, or maybe sci-fi?`, optionsNotify);
 };

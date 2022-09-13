@@ -1,3 +1,4 @@
+import { refs } from "./partials/refs";
 const checboxEl = document.querySelector('#toggle');
 // const container = document.getElementById('tui-pagination-container');
 // const container = document.querySelectorAll('a');
