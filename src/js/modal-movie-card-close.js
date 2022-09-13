@@ -1,4 +1,4 @@
-const closeModalBtn = document.querySelector('[data-modal-close]');
+const closeModalBtn = document.querySelector('[data-modal-movie-card-close]');
 const backdrop = document.querySelector('.modal-movie-card__js-backdrop');
 
 // При выходе забираем класс.
