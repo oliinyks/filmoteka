@@ -1,9 +1,10 @@
-import { gallery, paginationEl } from './data';
+import { gallery } from './data';
 import { paginationSearch } from './pagination';
 import { fetchSearchMovies } from './fetchSearchMovies';
 import { enableLoader, disableLoader } from './loader';
 import Notiflix from 'notiflix';
 import { renderMovies } from './renderTrends';
+import '../js/partials/notiflixSettings.js'; 
 
 let currentQuery = '';
 
@@ -35,6 +36,15 @@ refs.searchForm.addEventListener('submit', e => {
   fetchSearchMovies(refs.searchInput.value, 1).then(
     ({ results: images, total_results: totalResults }) => {
       disableLoader();
+      if (totalResults === 0) {
+        Notiflix.Notify.failure(
+          'По вашему запросу не нашлось результатов'
+        );
+        return;
+      }
+      Notiflix.Notify.success(
+        `По вашему запросу нашлось ${totalResults} фильмов`
+      );
       paginationSearch.on('afterMove', nextSearchedPage);
       refs.paginationSection.classList.remove('is-hidden');
       paginationSearch.reset(totalResults);
