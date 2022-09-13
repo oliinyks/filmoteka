@@ -1,73 +1,29 @@
-
-
-import { getGenres, getG } from './getGenres';
-import { paganation } from './pagination';
-import { renderTrandFilms } from './renderTrends';
-import { fetchTrendFilms } from './fetchFilms';
-
-
-
-
-
-//=======пагинация
-
-
-//============================тест
-const testWatch = [
-  {
-    id: 299536,
-    poster_path: '/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg',
-    title: 'Avengers: Infinity War',
-    genre_ids: [28, 12, 14, 878],
-    release_date: '2018-04-25',
-    vote_average: 8.3,
-  },
-  {
-    id: 383498,
-    poster_path: '/to0spRl1CMDvyUbOnbb4fTk3VAd.jpg',
-    title: 'Deadpool 2',
-    genre_ids: [28, 35, 878],
-    release_date: '2018-05-15',
-    vote_average: 7.6,
-  },
-]
-const testQueue = [
-  {
-    id: 500664,
-    poster_path: '/adOzdWS35KAo21r9R4BuFCkLer6.jpg',
-    title: 'Upgrade',
-    genre_ids: [28, 878, 53],
-    release_date: '2018-06-01',
-    vote_average: 7.6,
-  },
-];
+import { modalCreateMarkup } from './modal-movie-card';
 
 const btnWatch = document.querySelector(".button-watched") 
 const btnQueue =document.querySelector (".button-queue") 
 const galLibrary = document.querySelector(".library-list")
 
-// btnWatch.addEventListener ("click", () => {console.log("Button was clicked");});
-// btnQueue.addEventListener ("click", () => {console.log("Q");});
+btnWatch.addEventListener('click', onBtnWatchClick);
+btnQueue.addEventListener('click', onBtnQueueClick);
 
 
-  // ==  ключи по которым хранится все в локалСтор
-// let dataW = localStorage.getItem('watchResults');
-// let dataQ = localStorage.getItem('queueResult');
-
-// тестим
-let dataW = localStorage.getItem('testWatch');
-let dataQ = localStorage.getItem('testQueue');
-  
-  // переменые в которых  распарсеные данные из ключей
-// dataW = JSON.parse(dataW);
-// console.log(dataW)
-// dataQ = JSON.parse(dataQ);
-// console.log(dataQ)
-
-
+function onBtnWatchClick(e){
+	const savedMovie = JSON.parse(localStorage.getItem('watchResults'));
+	console.log("🚀 ~ file: renderLocalStorage.js ~ line 69 ~ onBtnClick ~ savedMovie", savedMovie)
+	if(savedMovie){
+		modalCreateMarkup(savedMovie);
+	}
+}
+function onBtnQueueClick(e){
+	const savedMovie =  JSON.parse(localStorage.getItem('testQueue'));
+	console.log("🚀 ~ file: renderLocalStorage.js ~ line 69 ~ onBtnClick ~ savedMovie", savedMovie)
+	if(savedMovie){
+		modalCreateMarkup(savedMovie);
+	}
+}
 
 function renderLocalStorage(data) {
-
    const markup = data
       .map(
         ({ poster_path, title, id, genre_ids, release_date, vote_average }) => {

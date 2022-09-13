@@ -9,9 +9,7 @@ function savedTheme (){
 	if(!savedTheme){
 		checboxEl.checked = !savedTheme;
 		document.body.classList.add('dark-theme');
-
 		paginationEl.classList.add('dark-theme');
-
 	}
 	 }
 
