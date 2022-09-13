@@ -101,6 +101,9 @@ line-height: 35px;
     color: getColor('extra-text');
    
 }
+.some-input:focus::placeholder {
+    opacity: 0;
+}
 .colortext {
     color: red;
 }

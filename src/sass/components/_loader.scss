@@ -11,13 +11,13 @@
     overflow: hidden;
 }
 
-.loader-wrapper {    
+.loader-wrapper {
     width: 300px;
     height: 100px;
     position: absolute;
     left: 50%;
-    top: 70%;
-    transform: translate(-50%, -50%);    
+    top: 330px;
+    transform: translate(-50%, 0);
 }
 
 .circle {
@@ -26,7 +26,7 @@
     position: absolute;
     border-radius: 50%;
     background-image: linear-gradient(90deg, #FF6B08 0%, #FF001B 74%);
-    left: 33%;    
+    left: 33%;
     transform-origin: 50%;
     animation: circle .5s alternate infinite ease;
 }
@@ -36,23 +36,23 @@
         top: 30px;
         height: 10px;
         border-radius: 100px 100px 50px 50px;
-        transform: scaleX(1.4);    
+        transform: scaleX(1.4);
     }
 
     40% {
         height: 10px;
         border-radius: 50%;
-        transform: scaleX(1); 
+        transform: scaleX(1);
     }
 
     100% {
-        top: 0%;        
+        top: 0%;
     }
 }
 
 .circle:nth-child(2) {
-    left: 48%;
-    animation-delay: .2s;    
+    left: 49%;
+    animation-delay: .2s;
 }
 
 .circle:nth-child(3) {
@@ -92,7 +92,7 @@
 }
 
 .shadow:nth-child(5) {
-    left: 48%;
+    left: 49%;
     animation-delay: .2s
 }
 
@@ -102,76 +102,38 @@
     animation-delay: .3s;
 }
 
-.loader-text {
-    margin-top: 20px;
-    position: absolute;
-    top: 20px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 25px;    
-    letter-spacing: 8px;
-    color: getColor('hover');
-    left: 50%;
-    transform: translate(-50%, 50%);
-}
-
-.gif-wrap {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -175%);
-    width: 25%;    
-}
-
-.tenor-gif-embed {
-    transform: rotateY(180deg)
-}
-
 @include for-tablet-up {
+
     .loader-wrapper {
-            width: 500px;
-            height: 100px;
-            top: 80%;            
+        width: 600px;
+    }
+
+    .circle {
+        width: 15px;
+        height: 15px;
+    }
+
+    @keyframes circle {
+        0% {
+            top: 30%;
+            height: 15px;
+            border-radius: 100px 100px 50px 50px;
+            transform: scaleX(1.4);
         }
 
-        .circle {
-            width: 15px;
-            height: 15px;            
-        }
-    
-        @keyframes circle {
-            0% {
-                top: 30%;                
-                height: 15px;
-                border-radius: 100px 100px 50px 50px;
-                transform: scaleX(1.4);
-            }
-    
-            40% {
-                height: 15px;
-                border-radius: 50%;
-                transform: scaleX(1);
-            }
-    
-            100% {
-                top: 0%;
-            }
+        40% {
+            height: 15px;
+            border-radius: 50%;
+            transform: scaleX(1);
         }
 
-        .shadow {
-            width: 15px;
-            height: 5px;            
+        100% {
+            top: 0%;
         }
-    
-        .loader-text {
-            margin-top: 30px;            
-            font-size: 35px;
-            letter-spacing: 10px;            
-            left: 51%;            
-        }
-    
-        .gif-wrap {
-            position: absolute;            
-            transform: translate(-50%, -140%);
-            width: 30%;
-        }
+    }
+
+    .shadow {
+        width: 15px;
+        height: 5px;
+    }
 }
