@@ -1,27 +1,56 @@
 <header class="overlay-lab">
   <div class="container">
     <ul class="site-nav">
-      <svg class="film-logo">
-        <a href="./index.html">
+      <li class="site-nav__item">
+        <ul class="site-nav__link-list">
+          <svg class="film-logo">
+            <a href="./index.html">
+            <use href="./images/sprite.svg#icon-film"></use>
+            </a>
+          </svg>
+          <li class="site-nav__item--film" >
+            <a href="./index.html" class="site-nav__link">Filmoteka</a>
+          </li>
+        </ul>
+      </li>
+        <!-- <svg class="film-logo">
+          <a href="./index.html">
           <use href="./images/sprite.svg#icon-film"></use>
           </a>
         </svg>
-        <li class="site-nav__item--film">
-          <a href="#" class="site-nav__link">Filmoteka</a>
+        <li class="site-nav__item--film" >
+          <a href="./index.html" class="site-nav__link">Filmoteka</a>
+        </li> -->
+        <li class="site-nav__item">
+          <ul class="site-nav__link-list">
+            <li class="site-nav__home">
+              <a href="./index.html" class="site-nav__link--home">Ноme</a>
+            </li>
+            <li class="site-nav__library">
+              <a href="./my-library.html" class="site-nav__link--library site-nav__current">my library</a>
+            </li>
+            <li class="site-nav__sign">
+              <a href="#" class="site-nav__link--sign">sign in</a>
+            </li>
+          </ul>
         </li>
-        <li class="site-nav__home">
-          <a href="./index.html" class="site-nav__link--home">Ноme</a>
+        <!-- <li class="site-nav__home">
+          <a href="./index.html" class="site-nav__link--home site-nav__current">Ноme</a>
         </li>
         <li class="site-nav__library">
-          <a href="#" class="site-nav__link--library site-nav__current">my library</a>
+          <a href="./my-library.html" class="site-nav__link--library">my library</a>
         </li>
         <li class="site-nav__sign">
-          <a href="#" data-modal-open class="site-nav__link--sign">sign in</a>
-        </li>
+          <a href="#" class="site-nav__link--sign">sign in</a>
+        </li> -->
     </ul>
     <div class="button">
+      <a href="">
         <button class="button-watched" type="submit">Watched</button>
+      </a>
+      <a href="">
         <button class="button-queue" type="submit">queue</button>
+      </a>
     </div>
 
     <!-- Переключатель Day/Night -->
