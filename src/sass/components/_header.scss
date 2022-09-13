@@ -1,3 +1,11 @@
+.site-nav__item {
+    display: flex;
+}
+
+.site-nav__link-list {
+    display: flex;
+}
+// ************************
 .site-nav__link--home {
     font-family: 'Roboto';
     font-style: normal;
@@ -19,7 +27,7 @@
 }
 .site-nav__home {
     padding-top: 44px;
-    margin-left: 100px;
+    // margin-left: 100px;
    
 }
 
@@ -69,8 +77,10 @@
 .site-nav {
     list-style: none;
     display: flex;
+    justify-content: space-between;
     margin: 0;
-    padding: 0;
+    padding-left: 22px;
+    padding-right: 22px;
    
 }
 .film-logo {
@@ -158,13 +168,17 @@ line-height: 35px;
         bottom: 7px;
         margin-left: 250px;
     }
+    .site-nav {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     .site-nav__sign{
         margin-left: 20px;
         padding-top: 46px;
     }
-    .site-nav__home{
-        margin-left: 50px;
-    }
+    // .site-nav__home{
+    //     margin-left: 50px;
+    // }
     .site-nav__library {
         margin-left: 35px;
     }
@@ -191,7 +205,7 @@ line-height: 35px;
     }
     .site-nav__home {
         padding-top: 49px;
-        margin-left: 350px;
+        // margin-left: 350px;
     }
     .site-nav__library{
         padding-top: 49px;
@@ -238,9 +252,9 @@ line-height: 35px;
             margin-top: 133px;
             margin-left: 160px;
         }
-        .site-nav__home {
-            margin-left: 335px;
-        }
+        // .site-nav__home {
+        //     margin-left: 335px;
+        // }
         .site-nav__sign{
         margin-left: 36px;
        
@@ -261,7 +275,7 @@ line-height: 35px;
     }
     .site-nav__home{
         padding-top: 49px;
-        margin-left: 830px;
+        // margin-left: 830px;
     }
     .some-input {
         width: 394px;
