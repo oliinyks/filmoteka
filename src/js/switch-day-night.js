@@ -1,3 +1,4 @@
+import { refs } from "./partials/refs";
 const checboxEl = document.querySelector('#toggle');
 const paginationEl = document.querySelector('.tui-pagination');
 const FORM_KEY = 'day-night';
