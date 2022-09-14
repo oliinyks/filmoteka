@@ -1,5 +1,4 @@
 import './js/fetchFilms';
-import './js/buildSearchedMovies'
 import './js/fetchSearchMovies'
 import './js/partials/modal-auth';
 import './js/auth';
