@@ -1,6 +1,6 @@
 
 
-const dataLocalStorage = (id) => {
+const dataLocalStorage = (movie) => {
   const removeQueue = document.querySelector('.removeQueue');
   const addQueue = document.querySelector('.addQueue');
   const addWatch = document.querySelector('.addWatch');
@@ -15,33 +15,33 @@ const dataLocalStorage = (id) => {
   const getFilmStorage = (key) => JSON.parse(localStorage.getItem(key));
 
 
-  const saveToStorage = (key, id) => {
+  const saveToStorage = (key, movie) => {
     let storageResult = getFilmStorage(key);
     if (storageResult) {
       if (
         storageResult.length >= 1 &&
-        storageResult.find(item => item === id)
+        storageResult.find(item => item.id === movie.id)
       ) {
         return;
       }
-      localStorage.setItem(key, JSON.stringify([...storageResult, id]));
+      localStorage.setItem(key, JSON.stringify([...storageResult, movie]));
     } else {
-      localStorage.setItem(key, JSON.stringify([id]));
+      localStorage.setItem(key, JSON.stringify([movie]));
     }
   };
 
-  const removeStorage = (key, id) => {
+  const removeStorage = (key, movie) => {
     const arrayStorage = JSON.parse(localStorage.getItem(key));
-    const filterId = arrayStorage.filter(item => item !== id);
+    const filterId = arrayStorage.filter(item => item.id !== movie.id);
     localStorage.setItem(key, JSON.stringify(filterId));
    };
 
   // Проверка
   // Если в localStorage есть данные и они равны id, то кнопки в модалке не ресетятся
   const watchedResults = getFilmStorage(keyWatch);
-  const checkWatchedStorage = watchedResults?.some(item => item === id);
+  const checkWatchedStorage = watchedResults?.some(item => item.id === movie.id);
   const queueResults = getFilmStorage(keyQueue);
-  const checkQueuedStorage = queueResults?.some(item => item === id);
+  const checkQueuedStorage = queueResults?.some(item => item.id === movie.id);
 
   if (checkWatchedStorage) {
     inputWatch.setAttribute('checked', '');
@@ -50,11 +50,11 @@ const dataLocalStorage = (id) => {
     inputQueue.setAttribute('checked', '');
   }
 
-    addWatch.addEventListener('click', () => saveToStorage(keyWatch, id));
-    removeWatch.addEventListener('click', () => removeStorage(keyWatch, id));
+    addWatch.addEventListener('click', () => saveToStorage(keyWatch, movie));
+    removeWatch.addEventListener('click', () => removeStorage(keyWatch, movie));
   
-    addQueue.addEventListener('click', () => saveToStorage(keyQueue, id));
-    removeQueue.addEventListener('click', () => removeStorage(keyQueue, id));
+    addQueue.addEventListener('click', () => saveToStorage(keyQueue, movie));
+    removeQueue.addEventListener('click', () => removeStorage(keyQueue, movie));
   
 };
 
