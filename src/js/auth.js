@@ -7,7 +7,7 @@ import {
     signOut,
 } from "firebase/auth";
 import { refs } from './partials/refs';
-import { onSucsessSignInAlert, onAuthVerified, onUnsubscribeAlert } from '../js/partials/alerts-auth';
+import { onSucsessSignInAlert, onAuthVerified, onUnsubscribeAlert, onUnSignInAlert } from '../js/partials/alerts-auth';
 
 refs.signInBtn.addEventListener('click', loginWithEmilAndPassword);
 refs.logOutBtn.addEventListener('click', logOut);
@@ -24,15 +24,13 @@ const firebaseaApp = initializeApp({
 
 const auth = getAuth(firebaseaApp);
 
-monitorAuthState();
 
+monitorAuthState();
 async function monitorAuthState(){
     onAuthStateChanged(auth, user=>{
-        if(user.emailVerified){
-            onSucsessSignInAlert();
-        }
-        else if(user){
+        if(user){
             onAuthVerified();
+            refs.container.classList.remove('right-panel-active');
         }
         else{
             onUnsubscribeAlert();
@@ -45,7 +43,7 @@ async function createAccount (){
     const loginPassword = refs.passwordUp.value;
     
     const userCredential = await createUserWithEmailAndPassword(auth, loginEmail, loginPassword);
-    console.log(userCredential.user);
+    
 };
 
 async function loginWithEmilAndPassword(){
@@ -54,9 +52,14 @@ async function loginWithEmilAndPassword(){
     
     const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
 
-    console.log(userCredential.user);
+    
+    refs.logOutBtn.classList.remove('is-hidden');
 };
 
 async function logOut(){
     await signOut(auth);
+    onUnSignInAlert();
+   
+    refs.logOutBtn.classList.add('is-hidden');
+    refs.signInBtn.disabled = true;
 };

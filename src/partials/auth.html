@@ -1,35 +1,35 @@
 <div data-modal class="backdrop is-hidden">
-
   <div class="container-auth right-panel-active">
-            <button data-modal-close class="modal__close-button" type="button" >
-    <svg class="modal__icon-cross">
-        <use href="./images/sprite.svg#icon-cross_modal"></use>
-    </svg>
-  </button>
+    <button data-modal-close class="modal__close-button" type="button" >
+      <svg class="modal__icon-cross">
+          <use href="./images/sprite.svg#icon-cross_modal"></use>
+      </svg>
+    </button>
       <div class="container-auth__form container-auth--signup">
           <form action="#" class="form " id="formUp">
               <h2 class="form__title">Sign up</h2>
                   <input class="input" data-emailUp type="email" placeholder="E-mail">
                   <input class="input" data-passwordUp type="password" placeholder="Password">
-              <button data-signUp type="button" class="btn">Sign up</button>
+              <button data-signUp type="submit" class="btn">Sign up</button>
           </form>
       </div>
-
+    
       <div class="container-auth__form container-auth--signin">
+        <button data-modal-close-left class="modal__close-button--left" type="button" >
+          <svg class="modal__icon-cross--left">
+              <use href="./images/sprite.svg#icon-cross_modal--left"></use>
+          </svg>
+        </button>
         <form action="#" class="form" id="formIn">
             <h2 class="form__title">Sign in</h2>
               <input class="input" data-emailIn type="email" placeholder="E-mail">
               <input class="input" data-passwordIn type="password" placeholder="Password">
               <a href="#" class="form_link">Forgot your password?</a>
-              <button data-signIn type="button" class="btn">Sign in</button>
-              <button data-logOut type="button" class="btn">Log out</button>
-        </form>
+              <button data-signIn type="submit" class="btn">Sign in</button>
+              <button data-logOut type="submit" class="btn is-hidden">Log out</button>
+        </form>   
       </div>
-          <button data-modal-close-left class="modal__close-button--left" type="button" >
-    <svg class="modal__icon-cross--left">
-        <use href="./images/sprite.svg#icon-cross_modal--left"></use>
-    </svg>
-  </button>
+      
       <div class="container-auth__overlay-auth">
         <div class="overlay-auth">
             <div class="overlay__panel overlay--left">
@@ -38,7 +38,44 @@
             <div class="overlay__panel overlay--right">
               <button class='btn' type="submit" id="signUp">Sign up</button>
             </div>
-          </div>
+          </div> 
       </div>
     </div>
+</div>
+
+<div data-modal-mobile class="backdrop-mobile is-hidden">
+<div class="container-mobile">
+  <div class="mobile-auth">
+    <button data-modal-close class="modal__close-button" type="button" >
+      <svg class="modal__icon-cross">
+          <use href="./images/sprite.svg#icon-cross_modal"></use>
+      </svg>
+    </button>
+      <form action="#" class="form-mobile-auth" id="formMobile">
+      <h2 class="form__title--mobile">Sign up</h2>
+          <input class="input-mobile" data-emailUpMobile type="email" placeholder="E-mail">
+          <input class="input-mobile" data-passwordUpMobile type="password" placeholder="Password">
+      <button data-signUpMobile type="button" class="btn-mobile">Sign up</button>
+      <button data-signInMobile type="button" class="btn-mobile">Sign in</button>
+      </form>
+  </div>
+</div>
+  <div class="container-mobile">
+      <div data-thumb class="thumb">
+        <button data-modal-close class="modal__close-button" type="button" >
+          <svg class="modal__icon-cross">
+              <use href="./images/sprite.svg#icon-cross_modal"></use>
+          </svg>
+        </button>
+      <div data-mobile-signIn class="mobile-auth sign-in sign-up-active">
+          <form action="#" class="form-mobile-auth" id="formMobileIn">
+          <h2 class="form__title--mobile">Sign in</h2>
+              <input class="input-mobile" data-emailInMobile type="email" placeholder="E-mail">
+              <input class="input-mobile" data-passwordInMobile type="password" placeholder="Password">
+              <button data-signInMobile type="button" class="btn-mobile">Sign in</button>
+              <button data-signUpMobileSecondForm type="button" class="btn-mobile">Sign up</button>
+          </form>
+      </div>
+  </div>
+  </div>
 </div>
