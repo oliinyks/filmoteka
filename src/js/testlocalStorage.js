@@ -35,40 +35,36 @@ localStorage.setItem('testWatch',JSON.stringify(testWatch))
 localStorage.setItem('testQueue', JSON.stringify(testQueue))
 
 
+
+
 const btnWatch = document.querySelector(".button-watched") 
 const btnQueue =document.querySelector (".button-queue") 
 const galLibrary = document.querySelector(".library-list")
+const tecstLibr = document.querySelector(".libry-empty")
 
 btnWatch.addEventListener('click', onBtnWatchClick);
 btnQueue.addEventListener('click', onBtnQueueClick);
 
 
 function onBtnWatchClick(e) {
-  const savedMovie = JSON.parse(localStorage.getItem('testWatch'));
+  e.preventDefault(e);
+  const savedMovie = JSON.parse(localStorage.getItem('testWatch')); // testWatch на watchResults
   console.log("🚀 ~ file: renderLocalStorage.js ~ line 69 ~ onBtnClick ~ savedMovie", savedMovie)
  renderLocalStorage(savedMovie)
-    
-    
-  // fetchTrendFilms(savedMovie)
-  //   .then(movie => {
-  //     if () {
-  //     const wathc = movie.map(movie => renderLocalStorage(movie));
-  //     refs.galLibrary.innerHTML = wathc.
-  //   }
-  // })
-  
 }
 
-function onBtnQueueClick(e){
-  const savedMovie = JSON.parse(localStorage.getItem('testQueue'));
+function onBtnQueueClick(e) {
+  e.preventDefault(e);
+  const savedMovie = JSON.parse(localStorage.getItem('testQueue')); // testQueue на queueResult
 	console.log("🚀 ~ file: renderLocalStorage.js ~ line 69 ~ onBtnClick ~ savedMovie", savedMovie)
 	renderLocalStorage(savedMovie)
   
 }
 
 function renderLocalStorage(data) {
+  tecstLibr.innerHTML = '';
   galLibrary.innerHTML = '';
-   const markup = data
+    const markup = data
       .map(
         ({ poster_path, title, id, genre_ids, release_date, vote_average }) => {
         const getNames = getGenres(genre_ids);
@@ -76,15 +72,16 @@ function renderLocalStorage(data) {
         // const rating = vote_average.toFixed(1);
         return `<li class="gallery__item movie-card" data-id=${id}>
         <a href="#" class="gallery__link movie-card__link link" data-id=${id}>
-          <div class="gallery__wrapper" data-id=${id}>
-              <img
-                  class="gallery__img movie-card__image"
-                  src="https://www.themoviedb.org/t/p/w500${poster_path}"
-                  alt="${title}"
-                  loading="lazy"
-                  data-id=${id}
-                  onerror="this.src='https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg?tr=fo-auto,di-';"
-                  >
+    <div class="gallery__wrapper" data-id=${id}>
+    
+        <img
+            class="gallery__img movie-card__image"
+            src="https://www.themoviedb.org/t/p/w500${poster_path}"
+            alt="${title}"
+            loading="lazy"
+            data-id=${id}
+            onerror="this.src='https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg?tr=fo-auto,di-';"
+            >
           </div>
           <div class="gallery__thumb movie-card__info" data-id=${id}>
               <h3 class="gallery__name movie-card__title" data-id=${id}>${title}</h3>
