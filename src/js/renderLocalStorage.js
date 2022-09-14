@@ -1,4 +1,8 @@
-import { modalCreateMarkup } from './modal-movie-card';
+// import { modalCreateMarkup } from './modal-movie-card';
+
+import { fetchTrendFilms } from './fetchFilms';
+import { getGenres, getG } from './getGenres';
+
 
 const btnWatch = document.querySelector(".button-watched") 
 const btnQueue =document.querySelector (".button-queue") 
@@ -8,22 +12,30 @@ btnWatch.addEventListener('click', onBtnWatchClick);
 btnQueue.addEventListener('click', onBtnQueueClick);
 
 
-function onBtnWatchClick(e){
-	const savedMovie = JSON.parse(localStorage.getItem('watchResults'));
-	console.log("🚀 ~ file: renderLocalStorage.js ~ line 69 ~ onBtnClick ~ savedMovie", savedMovie)
-	if(savedMovie){
-		modalCreateMarkup(savedMovie);
-	}
+function onBtnWatchClick(e) {
+  const savedMovie = JSON.parse(localStorage.getItem('watchResults'));
+  console.log("🚀 ~ file: renderLocalStorage.js ~ line 69 ~ onBtnClick ~ savedMovie", savedMovie)
+
+  // fetchTrendFilms(savedMovie)
+  //   .then(movie => {
+  //     if () {
+  //     const wathc = movie.map(movie => renderLocalStorage(movie));
+  //     refs.galLibrary.innerHTML = wathc.
+  //   }
+  // })
+  
 }
+
+
 function onBtnQueueClick(e){
-	const savedMovie =  JSON.parse(localStorage.getItem('testQueue'));
+  const savedMovie = JSON.parse(localStorage.getItem('queueResult'));
 	console.log("🚀 ~ file: renderLocalStorage.js ~ line 69 ~ onBtnClick ~ savedMovie", savedMovie)
-	if(savedMovie){
-		modalCreateMarkup(savedMovie);
-	}
+	
+  
 }
 
 function renderLocalStorage(data) {
+  galLibrary.innerHTML = '';
    const markup = data
       .map(
         ({ poster_path, title, id, genre_ids, release_date, vote_average }) => {
@@ -56,6 +68,20 @@ function renderLocalStorage(data) {
 }
 
 
+
+function showBlankLibrary() {
+  galLibrary.innerHTML = 
+    `
+  <li></li>
+  <li>
+   <a>
+      <p class="library__text"> There are no films yet !</p>
+      <img class="library__picture" src="${nothingHereUrl}" alt="blank cinema">
+    </a>
+    </li>
+  `;
+  pagination.style.display = 'none';
+}
 
 
 

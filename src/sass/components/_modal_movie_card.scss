@@ -2,16 +2,20 @@ body.show-modal .modal-movie-card__backdrop {
   opacity: 1;
   pointer-events: initial;
 }
+
 body.show-modal .modal-movie-card {
   transform: scale(1);
 }
+
 .modal-movie-card__container {
   position: relative;
   margin-top: 20rem;
+
   @include for-tablet-up {
     margin-top: 0rem;
   }
 }
+
 .modal-movie-card__backdrop {
   z-index: 1001;
   opacity: 0;
@@ -30,10 +34,12 @@ body.show-modal .modal-movie-card {
   transition-property: all;
   backdrop-filter: saturate(180%) blur(10px);
   background-color: rgba(0, 0, 0, 0.25);
+
   @include for-tablet-up {
     overflow: hidden;
   }
 }
+
 .modal-movie-card {
   font-family: Roboto, sans-serif;
   width: 280px;
@@ -43,6 +49,7 @@ body.show-modal .modal-movie-card {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
   @include for-tablet-up {
     width: 704px;
     height: 552px;
@@ -50,6 +57,7 @@ body.show-modal .modal-movie-card {
     display: flex;
     justify-content: space-around;
   }
+
   @include for-desktop-up {
     width: 806px;
     height: 558px;
@@ -58,6 +66,7 @@ body.show-modal .modal-movie-card {
     justify-content: space-around;
   }
 }
+
 // СВГ закрытие модального окна
 .modal-movie-card__close-btn {
   display: flex;
@@ -70,11 +79,13 @@ body.show-modal .modal-movie-card {
   border: none;
   cursor: pointer;
   background-color: $text-white-color;
+
   @include for-tablet-up {
     top: 1px;
     right: 1px;
   }
 }
+
 .modal-movie-card__icon-exit {
   position: absolute;
   top: 0.5rem;
@@ -83,6 +94,7 @@ body.show-modal .modal-movie-card {
   width: 24px;
   height: 24px;
 }
+
 //
 .modal-movie-card__film-title {
   color: $title-text-color;
@@ -91,6 +103,7 @@ body.show-modal .modal-movie-card {
   line-height: 23px;
   margin-bottom: 15px;
 }
+
 .modal-movie-card__table {
   border-collapse: collapse;
   font-weight: 500;
@@ -98,19 +111,23 @@ body.show-modal .modal-movie-card {
   line-height: 16px;
   margin-bottom: 15px;
 }
+
 .modal-movie-card__table-refs {
   padding-top: 5px;
   padding-bottom: 5px;
   color: getColor('modal-text-color');
 }
+
 .modal-movie-card__table-value {
   color: $title-text-color;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 40px;
+
   @include for-tablet-up {
     padding-left: 50px;
   }
+
   @include for-desktop-up {
     padding-left: 95px;
   }
@@ -124,25 +141,31 @@ body.show-modal .modal-movie-card {
   text-transform: uppercase;
   margin-bottom: 8px;
 }
+
 .modal-movie-card__description {
   color: $title-text-color;
   font-weight: 500;
   font-size: 12px;
   line-height: 20px;
   margin-bottom: 26px;
+
   @include for-tablet-up {
     margin-bottom: 20px;
   }
 }
+
 .modal-movie-card__button-wrapper {
   display: flex;
   justify-content: space-between;
+
   @include for-tablet-up {
     justify-content: start;
-    & > :first-child {
+
+    &> :first-child {
       margin-right: 15px;
     }
   }
+
   @include for-desktop-up {
     margin-left: 8px;
   }
@@ -154,11 +177,13 @@ body.show-modal .modal-movie-card {
   height: 357px;
   overflow: hidden;
   border-radius: 1%;
+
   @include for-tablet-up {
     width: 250px;
     height: 374px;
     margin-bottom: 0px;
   }
+
   @include for-desktop-up {
     width: 319px;
     height: 478px;
@@ -166,7 +191,7 @@ body.show-modal .modal-movie-card {
   }
 }
 
-.modal-movie-card__img-wrapper > img {
+.modal-movie-card__img-wrapper>img {
   display: block;
   width: 100%;
   height: 100%;
@@ -182,12 +207,26 @@ body.show-modal .modal-movie-card {
   // }
 }
 
+.modal-movie-card__description {
+  @include for-tablet-up {
+    max-height: 150px;
+    overflow: scroll;
+  }
+
+  @include for-desktop-up {
+    max-height: 200px;
+    overflow: hidden;
+  }
+}
+
 .modal-movie-card__film-desсriptoin {
   width: 240px;
+
   @include for-tablet-up {
     width: 264px;
     margin-left: 60px;
   }
+
   @include for-desktop-up {
     width: 396px;
     margin-left: 20px;
@@ -198,10 +237,12 @@ body.show-modal .modal-movie-card {
   height: 44px;
   display: flex;
   justify-content: space-between;
+
   @include for-tablet-up {
     justify-content: flex-start;
   }
 }
+
 .modal-movie-card__item-desc--orange {
   background: $span-bg-color;
   border-radius: 5px;
@@ -210,6 +251,7 @@ body.show-modal .modal-movie-card {
   color: $text-white-color;
   padding: 1px 9px;
 }
+
 .modal-movie-card__item-desc--grey {
   font-size: 12px;
   line-height: 14px;

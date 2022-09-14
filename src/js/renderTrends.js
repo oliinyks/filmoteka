@@ -12,7 +12,7 @@ function renderMovies(data) {
         return `<li class="gallery__item movie-card" data-id=${id}>
         <a href="#" class="gallery__link movie-card__link link" data-id=${id}>
     <div class="gallery__wrapper" data-id=${id}>
-    
+
         <img
             class="gallery__img movie-card__image"
             src="https://www.themoviedb.org/t/p/w500${poster_path}"
@@ -36,7 +36,3 @@ function renderMovies(data) {
 }
 
 export { renderMovies };
-
-
-
-// <span class="gallery__vote" data-id=${id}>${rating}</span>
