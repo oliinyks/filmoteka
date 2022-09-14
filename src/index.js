@@ -2,6 +2,7 @@ import './js/fetchFilms';
 import './js/buildSearchedMovies'
 import './js/fetchSearchMovies'
 import './js/partials/modal-auth';
+import './js/partials/mobile-auth';
 import './js/auth';
 import './js/renderTrends';
 import './js/buildTrends';

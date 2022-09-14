@@ -1,5 +1,5 @@
 import { Notify } from 'notiflix';
-export { onSucsessSignInAlert, onAuthVerified, onUnsubscribeAlert };
+export { onSucsessSignInAlert, onAuthVerified, onUnsubscribeAlert, onUnSignInAlert };
 
 const optionsNotify = {
     position: 'center-top',
@@ -16,4 +16,7 @@ function onAuthVerified(){
 };
 function onUnsubscribeAlert(){
     Notify.info('You have no account yet! Sign up firstly.', optionsNotify);
+}
+function onUnSignInAlert(){
+    Notify.info('Please sign in to continue', optionsNotify);
 }
