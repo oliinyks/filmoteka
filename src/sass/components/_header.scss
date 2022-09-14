@@ -23,12 +23,12 @@
     &:focus {
      color:  getColor('hover');
     }
-   
+
 }
 .site-nav__home {
     padding-top: 44px;
     // margin-left: 100px;
-   
+
 }
 
 .site-nav__link--library {
@@ -37,7 +37,7 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 14px
-} 
+}
 .site-nav__link--library {
     color: getColor('extra-text');
     text-transform: uppercase;
@@ -67,7 +67,7 @@
     padding-top: 51px;
     margin-left: 40px;
 }
-    
+
 
 .site-nav__library {
     padding-top: 44px;
@@ -81,7 +81,7 @@
     margin: 0;
     padding-left: 22px;
     padding-right: 22px;
-   
+
 }
 .film-logo {
     width: 24px;
@@ -109,7 +109,7 @@ line-height: 35px;
     font-size: 14px;
     line-height: 16px;
     color: getColor('extra-text');
-   
+
 }
 .some-input:focus::placeholder {
     opacity: 0;
@@ -129,7 +129,7 @@ line-height: 35px;
 
 
 @media screen and (max-width: 767px) {
-   
+
     .overlay {
         background-image: url('/src/images/overlay/bg-mob.jpg');
         height: 230px;
@@ -150,14 +150,14 @@ line-height: 35px;
          outline: none;
          width: 265px;
          color: getColor('extra-text');
-         
+
     }
     .search-form {
         display: flex;
         justify-content: center;
         margin-top: 80px;
         position: relative;
-       
+
     }
 
     .search-form__btn {
@@ -172,9 +172,9 @@ line-height: 35px;
     margin: 0;
     padding: 0;
     background-color:getColor('footer');
-    
+
     }
-   
+
     .search {
         width: 12px;
         height: 12px;
@@ -197,11 +197,11 @@ line-height: 35px;
     .site-nav__library {
         margin-left: 35px;
     }
-    
-   
+
+
 }
 @media screen and (min-width:768px) {
-   
+
     .overlay {
         background-image: url('/src/images/overlay/bg-tab.jpg');
         height: 216px;
@@ -213,7 +213,7 @@ line-height: 35px;
     }
     .site-nav__film {
         padding-top: 40px;
-       
+
     }
     .film-logo {
         margin-top: 45px;
@@ -240,6 +240,7 @@ line-height: 35px;
     .search-form {
         display: flex;
         justify-content: center;
+        position: relative;
     }
     .search-form {
         margin-top: 60px;
@@ -249,7 +250,7 @@ line-height: 35px;
         margin: 0;
         padding: 0;
         background-color:getColor( 'footer');
-        
+
         }
         .footer-list  {
            list-style: none;
@@ -263,13 +264,12 @@ line-height: 35px;
             width: 12px;
             height: 12px;
             // position: absolute;
-        }  
+        }
         .search-form__btn {
             width: 15px;
             height: 15px;
             position: absolute;
             top: 0;
-            margin-top: 133px;
             margin-left: 314px;
         }
         // .site-nav__home {
@@ -277,13 +277,13 @@ line-height: 35px;
         // }
         .site-nav__sign{
         margin-left: 36px;
-       
+
       }
-       
+
    }
 
 @media screen and (min-width:1280px) {
-   
+
     .overlay {
         background-image: url('/src/images/overlay/bg-desk.jpg');
         height: 216px;
@@ -309,7 +309,7 @@ line-height: 35px;
         margin: 0;
         padding: 0;
         background-color: getColor( 'footer');
-        
+
         }
         .footer-list  {
            list-style: none;
@@ -319,7 +319,7 @@ line-height: 35px;
            margin-right: 70px;
            margin: 0;
           padding-top: 34px;;
-          
+
         }
 
         .search-form__btn {
@@ -331,20 +331,20 @@ line-height: 35px;
             // margin-top: 132px;
             margin-top: 0;
             margin-left: 379px;
-            
+
         }
         .search {
             cursor: pointer;
             width: 12px;
             height: 12px;
-            
+
         }
         .film-logo {
             margin-left: 0;
         }
-        
-   
-    
+
+
+
 }
 
 .site-nav__link--home.site-nav__current::after {
@@ -353,13 +353,13 @@ line-height: 35px;
     display: block;
     border: 1px solid getColor('hover');
     background-color:  getColor('hover');
-    
+
     left: 154;
     width: 0;
     height: 3px;
     top: 60;
     width: 35px;
-    
+
 }
 .site-nav__link--home.site-nav__current:after {
     content: "";
@@ -367,27 +367,27 @@ line-height: 35px;
     display: block;
     border: 1px solid getColor('hover');
     background-color:  getColor('hover');
-    
+
     left:0;
     width: 0;
     height: 3px;
     top: 14;
     width: 35px;
-   
+
 }
 
 .site-nav__link--library.site-nav__current:after {
     content: "";
     position: absolute;
     display: block;
-   
+
     border: 1px solid  getColor('hover');
     background-color:  getColor('hover');
-    
+
     right:0;
     width: 0;
     height: 3px;
     top: 14;
     width: 68px;
-    
+
 }
