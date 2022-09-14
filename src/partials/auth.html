@@ -1,15 +1,11 @@
 <div data-modal class="backdrop is-hidden">
-  <button data-modal-close class="modal__close-button" type="button" >
+
+  <div class="container-auth right-panel-active">
+            <button data-modal-close class="modal__close-button" type="button" >
     <svg class="modal__icon-cross">
         <use href="./images/sprite.svg#icon-cross_modal"></use>
     </svg>
   </button>
-  <button data-modal-close-left class="modal__close-button--left" type="button" >
-    <svg class="modal__icon-cross--left">
-        <use href="./images/sprite.svg#icon-cross_modal--left"></use>
-    </svg>
-  </button>
-  <div class="container-auth right-panel-active">
       <div class="container-auth__form container-auth--signup">
           <form action="#" class="form " id="formUp">
               <h2 class="form__title">Sign up</h2>
@@ -18,7 +14,7 @@
               <button data-signUp type="button" class="btn">Sign up</button>
           </form>
       </div>
-    
+
       <div class="container-auth__form container-auth--signin">
         <form action="#" class="form" id="formIn">
             <h2 class="form__title">Sign in</h2>
@@ -27,9 +23,13 @@
               <a href="#" class="form_link">Forgot your password?</a>
               <button data-signIn type="button" class="btn">Sign in</button>
               <button data-logOut type="button" class="btn">Log out</button>
-        </form>   
+        </form>
       </div>
-      
+          <button data-modal-close-left class="modal__close-button--left" type="button" >
+    <svg class="modal__icon-cross--left">
+        <use href="./images/sprite.svg#icon-cross_modal--left"></use>
+    </svg>
+  </button>
       <div class="container-auth__overlay-auth">
         <div class="overlay-auth">
             <div class="overlay__panel overlay--left">
@@ -38,7 +38,7 @@
             <div class="overlay__panel overlay--right">
               <button class='btn' type="submit" id="signUp">Sign up</button>
             </div>
-          </div> 
+          </div>
       </div>
     </div>
 </div>
