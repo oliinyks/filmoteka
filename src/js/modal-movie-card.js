@@ -18,7 +18,7 @@ async function modalCreateMarkup() {
         'beforeend',
         createModal(movie, genreMovieCard)
       );
-      dataLocalStorage(id);
+      dataLocalStorage(movie);
     })
     .catch(error => console.log(error));
   disableLoader();
