@@ -2,37 +2,37 @@
 import { getGenres, getG } from './getGenres';
 
 
-const testWatch = [
-  {
-    id: 299536,
-    poster_path: '/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg',
-    title: 'Avengers: Infinity War',
-    genre_ids: [28, 12, 14, 878],
-    release_date: '2018-04-25',
-    vote_average: 8.3,
-  },
-  {
-    id: 383498,
-    poster_path: '/to0spRl1CMDvyUbOnbb4fTk3VAd.jpg',
-    title: 'Deadpool 2',
-    genre_ids: [28, 35, 878],
-    release_date: '2018-05-15',
-    vote_average: 7.6,
-  },
-]
-const testQueue = [
-  {
-    id: 500664,
-    poster_path: '/adOzdWS35KAo21r9R4BuFCkLer6.jpg',
-    title: 'Upgrade',
-    genre_ids: [28, 878, 53],
-    release_date: '2018-06-01',
-    vote_average: 7.6,
-  },
-];
+// const testWatch = [
+//   {
+//     id: 299536,
+//     poster_path: '/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg',
+//     title: 'Avengers: Infinity War',
+//     genre_ids: [28, 12, 14, 878],
+//     release_date: '2018-04-25',
+//     vote_average: 8.3,
+//   },
+//   {
+//     id: 383498,
+//     poster_path: '/to0spRl1CMDvyUbOnbb4fTk3VAd.jpg',
+//     title: 'Deadpool 2',
+//     genre_ids: [28, 35, 878],
+//     release_date: '2018-05-15',
+//     vote_average: 7.6,
+//   },
+// ]
+// const testQueue = [
+//   {
+//     id: 500664,
+//     poster_path: '/adOzdWS35KAo21r9R4BuFCkLer6.jpg',
+//     title: 'Upgrade',
+//     genre_ids: [28, 878, 53],
+//     release_date: '2018-06-01',
+//     vote_average: 7.6,
+//   },
+// ];
 
-localStorage.setItem('testWatch',JSON.stringify(testWatch))
-localStorage.setItem('testQueue', JSON.stringify(testQueue))
+// localStorage.setItem('testWatch',JSON.stringify(testWatch))
+// localStorage.setItem('testQueue', JSON.stringify(testQueue))
 
 
 
@@ -55,7 +55,7 @@ function onBtnWatchClick(e) {
 
 function onBtnQueueClick(e) {
   e.preventDefault(e);
-  const savedMovie = JSON.parse(localStorage.getItem('testQueue')); // testQueue на queueResult
+  const savedMovie = JSON.parse(localStorage.getItem('queueResult')); // testQueue на queueResult
 	console.log("🚀 ~ file: renderLocalStorage.js ~ line 69 ~ onBtnClick ~ savedMovie", savedMovie)
 	renderLocalStorage(savedMovie)
   
