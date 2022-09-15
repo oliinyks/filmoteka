@@ -1,9 +1,16 @@
-
+import { Notify } from 'notiflix';
 
 const btnWatch = document.querySelector(".button-watched")
 const btnQueue =document.querySelector (".button-queue")
 const galLibrary = document.querySelector(".library-list")
-const tecstLibr = document.querySelector(".libry-empty")
+const optionsNotify = {
+	position: 'center-top',
+	timeout: 2000, 
+	cssAnimationStyle: 'from-top',
+	fontAwesomeIconStyle: 'shadow',
+}
+
+Notify.info('Press the button.', optionsNotify);
 
 btnWatch.addEventListener('click', onBtnWatchClick);
 btnQueue.addEventListener('click', onBtnQueueClick);
@@ -12,20 +19,17 @@ btnQueue.addEventListener('click', onBtnQueueClick);
 function onBtnWatchClick(e) {
   e.preventDefault(e);
   const savedMovie = JSON.parse(localStorage.getItem('watchResults')); // testWatch на watchResults
-  console.log("🚀 ~ file: renderLocalStorage.js ~ line 69 ~ onBtnClick ~ savedMovie", savedMovie)
  renderLocalStorage(savedMovie)
 }
 
 function onBtnQueueClick(e) {
   e.preventDefault(e);
   const savedMovie = JSON.parse(localStorage.getItem('queueResult')); // testQueue на queueResult
-	console.log("🚀 ~ file: renderLocalStorage.js ~ line 69 ~ onBtnClick ~ savedMovie", savedMovie)
 	renderLocalStorage(savedMovie)
 
 }
 
 function renderLocalStorage(data) {
-  tecstLibr.innerHTML = '';
   galLibrary.innerHTML = '';
     const markup = data
       .map(
